@@ -1,0 +1,15 @@
+{
+  "query_id": 19,
+  "hint_id": 2,
+  "sql": "SELECT ... -- synthetic 59",
+  "plan": {
+    "Node Type": "Seq Scan",
+    "Startup Cost": 250.27,
+    "Total Cost": 1251.33,
+    "Plan Rows": 94627.0,
+    "Plan Width": 10,
+    "Actual Rows": 69532.0,
+    "Actual Total Time": 1550.32
+  },
+  "execution_time": 1550.32
+}

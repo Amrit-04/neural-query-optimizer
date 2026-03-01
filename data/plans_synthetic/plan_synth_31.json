@@ -1,0 +1,75 @@
+{
+  "query_id": 11,
+  "hint_id": 1,
+  "sql": "SELECT ... -- synthetic 31",
+  "plan": {
+    "Node Type": "Hash Join",
+    "Startup Cost": 286.33,
+    "Total Cost": 1431.63,
+    "Plan Rows": 65018.0,
+    "Plan Width": 52,
+    "Actual Rows": 34526.0,
+    "Actual Total Time": 2115.42,
+    "Plans": [
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 44.16,
+        "Total Cost": 220.8,
+        "Plan Rows": 19944.0,
+        "Plan Width": 12,
+        "Actual Rows": 19417.0,
+        "Actual Total Time": 160.87,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Startup Cost": 156.55,
+            "Total Cost": 782.76,
+            "Plan Rows": 56401.0,
+            "Plan Width": 53,
+            "Actual Rows": 49007.0,
+            "Actual Total Time": 1212.65
+          },
+          {
+            "Node Type": "Index Scan",
+            "Startup Cost": 188.48,
+            "Total Cost": 942.42,
+            "Plan Rows": 77781.0,
+            "Plan Width": 41,
+            "Actual Rows": 40888.0,
+            "Actual Total Time": 910.9
+          }
+        ]
+      },
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 296.79,
+        "Total Cost": 1483.96,
+        "Plan Rows": 57584.0,
+        "Plan Width": 64,
+        "Actual Rows": 69965.0,
+        "Actual Total Time": 1577.39,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Startup Cost": 284.58,
+            "Total Cost": 1422.88,
+            "Plan Rows": 59214.0,
+            "Plan Width": 48,
+            "Actual Rows": 75349.0,
+            "Actual Total Time": 1229.76
+          },
+          {
+            "Node Type": "Index Scan",
+            "Startup Cost": 272.52,
+            "Total Cost": 1362.61,
+            "Plan Rows": 79625.0,
+            "Plan Width": 38,
+            "Actual Rows": 73922.0,
+            "Actual Total Time": 765.25
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 2115.42
+}

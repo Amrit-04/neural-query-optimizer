@@ -1,0 +1,135 @@
+{
+  "query_id": 3,
+  "hint_id": 4,
+  "sql": "SELECT ... -- synthetic 83",
+  "plan": {
+    "Node Type": "Nested Loop",
+    "Startup Cost": 299.86,
+    "Total Cost": 1499.28,
+    "Plan Rows": 67015.0,
+    "Plan Width": 47,
+    "Actual Rows": 94655.0,
+    "Actual Total Time": 2411.08,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Startup Cost": 214.01,
+        "Total Cost": 1070.04,
+        "Plan Rows": 64606.0,
+        "Plan Width": 27,
+        "Actual Rows": 52258.0,
+        "Actual Total Time": 1115.78
+      },
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 221.64,
+        "Total Cost": 1108.19,
+        "Plan Rows": 34180.0,
+        "Plan Width": 12,
+        "Actual Rows": 22386.0,
+        "Actual Total Time": 873.26,
+        "Plans": [
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 189.3,
+            "Total Cost": 946.48,
+            "Plan Rows": 84444.0,
+            "Plan Width": 57,
+            "Actual Rows": 104597.0,
+            "Actual Total Time": 1567.67,
+            "Plans": [
+              {
+                "Node Type": "Limit",
+                "Startup Cost": 75.05,
+                "Total Cost": 375.27,
+                "Plan Rows": 3784.0,
+                "Plan Width": 12,
+                "Actual Rows": 4152.0,
+                "Actual Total Time": 619.0
+              },
+              {
+                "Node Type": "Nested Loop",
+                "Startup Cost": 198.77,
+                "Total Cost": 993.84,
+                "Plan Rows": 16233.0,
+                "Plan Width": 55,
+                "Actual Rows": 22769.0,
+                "Actual Total Time": 1646.45,
+                "Plans": [
+                  {
+                    "Node Type": "Sort",
+                    "Startup Cost": 81.74,
+                    "Total Cost": 408.72,
+                    "Plan Rows": 4379.0,
+                    "Plan Width": 32,
+                    "Actual Rows": 4863.0,
+                    "Actual Total Time": 645.53
+                  },
+                  {
+                    "Node Type": "Sort",
+                    "Startup Cost": 94.8,
+                    "Total Cost": 474.01,
+                    "Plan Rows": 23408.0,
+                    "Plan Width": 54,
+                    "Actual Rows": 22683.0,
+                    "Actual Total Time": 923.56
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 263.02,
+            "Total Cost": 1315.09,
+            "Plan Rows": 36790.0,
+            "Plan Width": 33,
+            "Actual Rows": 46703.0,
+            "Actual Total Time": 2599.48,
+            "Plans": [
+              {
+                "Node Type": "Hash Aggregate",
+                "Startup Cost": 184.44,
+                "Total Cost": 922.2,
+                "Plan Rows": 50296.0,
+                "Plan Width": 16,
+                "Actual Rows": 65448.0,
+                "Actual Total Time": 685.27
+              },
+              {
+                "Node Type": "Nested Loop",
+                "Startup Cost": 185.23,
+                "Total Cost": 926.14,
+                "Plan Rows": 87301.0,
+                "Plan Width": 27,
+                "Actual Rows": 92063.0,
+                "Actual Total Time": 1130.71,
+                "Plans": [
+                  {
+                    "Node Type": "Index Scan",
+                    "Startup Cost": 245.56,
+                    "Total Cost": 1227.82,
+                    "Plan Rows": 71143.0,
+                    "Plan Width": 9,
+                    "Actual Rows": 89862.0,
+                    "Actual Total Time": 843.54
+                  },
+                  {
+                    "Node Type": "Merge Join",
+                    "Startup Cost": 192.64,
+                    "Total Cost": 963.21,
+                    "Plan Rows": 44937.0,
+                    "Plan Width": 9,
+                    "Actual Rows": 64998.0,
+                    "Actual Total Time": 1682.32
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 2411.08
+}

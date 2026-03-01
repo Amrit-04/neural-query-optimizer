@@ -1,0 +1,77 @@
+{
+  "query_id": 4,
+  "hint_id": 4,
+  "sql": "SELECT ... -- synthetic 84",
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 363.04,
+    "Total Cost": 1815.18,
+    "Plan Rows": 88464.0,
+    "Plan Width": 29,
+    "Actual Rows": 88642.0,
+    "Actual Total Time": 2037.26,
+    "Plans": [
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 93.75,
+        "Total Cost": 468.75,
+        "Plan Rows": 38623.0,
+        "Plan Width": 24,
+        "Actual Rows": 55262.0,
+        "Actual Total Time": 392.25,
+        "Plans": [
+          {
+            "Node Type": "Aggregate",
+            "Startup Cost": 185.97,
+            "Total Cost": 929.86,
+            "Plan Rows": 79140.0,
+            "Plan Width": 57,
+            "Actual Rows": 76960.0,
+            "Actual Total Time": 865.07,
+            "Plans": [
+              {
+                "Node Type": "Nested Loop",
+                "Startup Cost": 245.7,
+                "Total Cost": 1228.51,
+                "Plan Rows": 75887.0,
+                "Plan Width": 61,
+                "Actual Rows": 43955.0,
+                "Actual Total Time": 1748.19
+              }
+            ]
+          },
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 73.22,
+            "Total Cost": 366.1,
+            "Plan Rows": 21573.0,
+            "Plan Width": 42,
+            "Actual Rows": 22172.0,
+            "Actual Total Time": 699.38,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Startup Cost": 202.92,
+                "Total Cost": 1014.6,
+                "Plan Rows": 77620.0,
+                "Plan Width": 19,
+                "Actual Rows": 71396.0,
+                "Actual Total Time": 692.74
+              },
+              {
+                "Node Type": "Sort",
+                "Startup Cost": 179.95,
+                "Total Cost": 899.75,
+                "Plan Rows": 6290.0,
+                "Plan Width": 38,
+                "Actual Rows": 3248.0,
+                "Actual Total Time": 1124.46
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 2037.26
+}

@@ -1,0 +1,86 @@
+{
+  "query_id": 15,
+  "hint_id": 0,
+  "sql": "SELECT ... -- synthetic 15",
+  "plan": {
+    "Node Type": "Nested Loop",
+    "Startup Cost": 107.27,
+    "Total Cost": 536.36,
+    "Plan Rows": 37398.0,
+    "Plan Width": 63,
+    "Actual Rows": 38533.0,
+    "Actual Total Time": 1035.32,
+    "Plans": [
+      {
+        "Node Type": "Seq Scan",
+        "Startup Cost": 217.62,
+        "Total Cost": 1088.1,
+        "Plan Rows": 59898.0,
+        "Plan Width": 27,
+        "Actual Rows": 82583.0,
+        "Actual Total Time": 726.64
+      },
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 96.23,
+        "Total Cost": 481.16,
+        "Plan Rows": 23953.0,
+        "Plan Width": 9,
+        "Actual Rows": 14028.0,
+        "Actual Total Time": 650.06,
+        "Plans": [
+          {
+            "Node Type": "Sort",
+            "Startup Cost": 358.81,
+            "Total Cost": 1794.05,
+            "Plan Rows": 81604.0,
+            "Plan Width": 12,
+            "Actual Rows": 51279.0,
+            "Actual Total Time": 2330.57,
+            "Plans": [
+              {
+                "Node Type": "Sort",
+                "Startup Cost": 222.56,
+                "Total Cost": 1112.82,
+                "Plan Rows": 94685.0,
+                "Plan Width": 42,
+                "Actual Rows": 87408.0,
+                "Actual Total Time": 1437.21
+              }
+            ]
+          },
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 336.89,
+            "Total Cost": 1684.43,
+            "Plan Rows": 92892.0,
+            "Plan Width": 49,
+            "Actual Rows": 75402.0,
+            "Actual Total Time": 2585.27,
+            "Plans": [
+              {
+                "Node Type": "Aggregate",
+                "Startup Cost": 191.24,
+                "Total Cost": 956.21,
+                "Plan Rows": 43816.0,
+                "Plan Width": 18,
+                "Actual Rows": 24713.0,
+                "Actual Total Time": 651.67
+              },
+              {
+                "Node Type": "Seq Scan",
+                "Startup Cost": 163.85,
+                "Total Cost": 819.23,
+                "Plan Rows": 58835.0,
+                "Plan Width": 8,
+                "Actual Rows": 71063.0,
+                "Actual Total Time": 680.23
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1035.32
+}

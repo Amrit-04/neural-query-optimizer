@@ -1,0 +1,46 @@
+{
+  "query_id": 0,
+  "hint_id": 1,
+  "sql": "SELECT ... -- synthetic 20",
+  "plan": {
+    "Node Type": "Hash Join",
+    "Startup Cost": 269.1,
+    "Total Cost": 1345.49,
+    "Plan Rows": 40384.0,
+    "Plan Width": 41,
+    "Actual Rows": 44201.0,
+    "Actual Total Time": 1822.48,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Startup Cost": 200.67,
+        "Total Cost": 1003.37,
+        "Plan Rows": 41928.0,
+        "Plan Width": 63,
+        "Actual Rows": 31898.0,
+        "Actual Total Time": 1288.5
+      },
+      {
+        "Node Type": "Aggregate",
+        "Startup Cost": 127.03,
+        "Total Cost": 635.15,
+        "Plan Rows": 23876.0,
+        "Plan Width": 23,
+        "Actual Rows": 22855.0,
+        "Actual Total Time": 957.51,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Startup Cost": 126.19,
+            "Total Cost": 630.95,
+            "Plan Rows": 941.0,
+            "Plan Width": 10,
+            "Actual Rows": 540.0,
+            "Actual Total Time": 848.31
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1822.48
+}

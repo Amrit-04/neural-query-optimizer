@@ -1,0 +1,15 @@
+{
+  "query_id": 14,
+  "hint_id": 0,
+  "sql": "SELECT ... -- synthetic 14",
+  "plan": {
+    "Node Type": "Limit",
+    "Startup Cost": 356.66,
+    "Total Cost": 1783.28,
+    "Plan Rows": 91264.0,
+    "Plan Width": 44,
+    "Actual Rows": 91963.0,
+    "Actual Total Time": 1689.96
+  },
+  "execution_time": 1689.96
+}

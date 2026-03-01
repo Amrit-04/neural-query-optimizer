@@ -1,0 +1,75 @@
+{
+  "query_id": 11,
+  "hint_id": 3,
+  "sql": "SELECT ... -- synthetic 71",
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 254.64,
+    "Total Cost": 1273.22,
+    "Plan Rows": 92155.0,
+    "Plan Width": 13,
+    "Actual Rows": 98266.0,
+    "Actual Total Time": 983.06,
+    "Plans": [
+      {
+        "Node Type": "Hash Aggregate",
+        "Startup Cost": 162.18,
+        "Total Cost": 810.91,
+        "Plan Rows": 6968.0,
+        "Plan Width": 9,
+        "Actual Rows": 8683.0,
+        "Actual Total Time": 1587.52
+      },
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 166.09,
+        "Total Cost": 830.45,
+        "Plan Rows": 37626.0,
+        "Plan Width": 23,
+        "Actual Rows": 45963.0,
+        "Actual Total Time": 611.31,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Startup Cost": 207.96,
+            "Total Cost": 1039.78,
+            "Plan Rows": 88335.0,
+            "Plan Width": 7,
+            "Actual Rows": 103703.0,
+            "Actual Total Time": 1696.56
+          },
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 173.55,
+            "Total Cost": 867.76,
+            "Plan Rows": 44317.0,
+            "Plan Width": 30,
+            "Actual Rows": 34264.0,
+            "Actual Total Time": 1224.07,
+            "Plans": [
+              {
+                "Node Type": "Limit",
+                "Startup Cost": 108.88,
+                "Total Cost": 544.39,
+                "Plan Rows": 11391.0,
+                "Plan Width": 47,
+                "Actual Rows": 12451.0,
+                "Actual Total Time": 503.49
+              },
+              {
+                "Node Type": "Limit",
+                "Startup Cost": 142.71,
+                "Total Cost": 713.54,
+                "Plan Rows": 66717.0,
+                "Plan Width": 42,
+                "Actual Rows": 37013.0,
+                "Actual Total Time": 779.82
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 983.06
+}

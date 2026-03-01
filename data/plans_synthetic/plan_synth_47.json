@@ -1,0 +1,35 @@
+{
+  "query_id": 7,
+  "hint_id": 2,
+  "sql": "SELECT ... -- synthetic 47",
+  "plan": {
+    "Node Type": "Hash Join",
+    "Startup Cost": 253.48,
+    "Total Cost": 1267.39,
+    "Plan Rows": 85603.0,
+    "Plan Width": 34,
+    "Actual Rows": 103171.0,
+    "Actual Total Time": 1238.58,
+    "Plans": [
+      {
+        "Node Type": "Hash Aggregate",
+        "Startup Cost": 210.03,
+        "Total Cost": 1050.17,
+        "Plan Rows": 38614.0,
+        "Plan Width": 13,
+        "Actual Rows": 38434.0,
+        "Actual Total Time": 1817.96
+      },
+      {
+        "Node Type": "Seq Scan",
+        "Startup Cost": 218.34,
+        "Total Cost": 1091.72,
+        "Plan Rows": 12633.0,
+        "Plan Width": 10,
+        "Actual Rows": 17361.0,
+        "Actual Total Time": 1089.53
+      }
+    ]
+  },
+  "execution_time": 1238.58
+}

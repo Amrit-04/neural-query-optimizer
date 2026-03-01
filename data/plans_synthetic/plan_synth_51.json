@@ -1,0 +1,46 @@
+{
+  "query_id": 11,
+  "hint_id": 2,
+  "sql": "SELECT ... -- synthetic 51",
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 93.32,
+    "Total Cost": 466.61,
+    "Plan Rows": 16645.0,
+    "Plan Width": 24,
+    "Actual Rows": 21574.0,
+    "Actual Total Time": 253.57,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 157.96,
+        "Total Cost": 789.78,
+        "Plan Rows": 35853.0,
+        "Plan Width": 30,
+        "Actual Rows": 38216.0,
+        "Actual Total Time": 684.19,
+        "Plans": [
+          {
+            "Node Type": "Nested Loop",
+            "Startup Cost": 49.99,
+            "Total Cost": 249.96,
+            "Plan Rows": 17007.0,
+            "Plan Width": 43,
+            "Actual Rows": 20121.0,
+            "Actual Total Time": 451.49
+          },
+          {
+            "Node Type": "Sort",
+            "Startup Cost": 211.36,
+            "Total Cost": 1056.81,
+            "Plan Rows": 91284.0,
+            "Plan Width": 20,
+            "Actual Rows": 87593.0,
+            "Actual Total Time": 1259.43
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 253.57
+}

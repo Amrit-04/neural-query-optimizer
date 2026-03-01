@@ -1,0 +1,15 @@
+{
+  "query_id": 0,
+  "hint_id": 3,
+  "sql": "SELECT ... -- synthetic 60",
+  "plan": {
+    "Node Type": "Hash Aggregate",
+    "Startup Cost": 224.9,
+    "Total Cost": 1124.51,
+    "Plan Rows": 45370.0,
+    "Plan Width": 64,
+    "Actual Rows": 47193.0,
+    "Actual Total Time": 1815.76
+  },
+  "execution_time": 1815.76
+}

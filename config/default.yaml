@@ -1,0 +1,58 @@
+# Neural Query Cost Model - Default Configuration
+# Phase 1: Data extraction, basic graph model, regression baseline
+# Phase 2: Ranking loss, attention pooling, multi-task, embeddings
+
+seed: 42
+deterministic: true
+
+# Data extraction
+data:
+  tpc_h_scale: 1              # TPC-H scale factor (1-5 for diversity)
+  output_dir: data/plans
+  num_queries: 100            # Queries per TPC-H template
+  force_alternative_plans: true
+  planner_hints:
+    - enable_hashjoin: false
+    - enable_mergejoin: false
+    - enable_hashjoin: true
+    - enable_mergejoin: false
+    - enable_hashjoin: false
+    - enable_mergejoin: true
+
+# Graph representation
+graph:
+  operator_embedding_dim: 16
+  depth_encoding_dim: 8
+  max_depth: 32
+
+# Model architecture (Phase 1/2)
+model:
+  type: gat                    # gcn | gat
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.1
+  pooling: attention           # mean | add | attention
+  multi_task: false            # Add cardinality prediction head
+  predict_cardinality: false
+
+# Training (Phase 1: regression, Phase 2: ranking)
+training:
+  mode: regression             # regression | ranking (needs query_id in plans)
+  batch_size: 32
+  epochs: 100
+  lr: 0.001
+  weight_decay: 1.0e-5
+  patience: 15                 # Early stopping
+  log_interval: 10
+  ranking_margin: 0.1          # Margin for pairwise ranking loss
+  ranking_weight: 0.5          # Weight of ranking loss when combined
+  cardinality_weight: 0.3      # Weight of cardinality loss in multi-task
+
+# Evaluation
+evaluation:
+  metrics:
+    - mae
+    - rmse
+    - r2
+    - spearman
+    - kendall

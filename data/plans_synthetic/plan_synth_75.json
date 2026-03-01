@@ -1,0 +1,26 @@
+{
+  "query_id": 15,
+  "hint_id": 3,
+  "sql": "SELECT ... -- synthetic 75",
+  "plan": {
+    "Node Type": "Aggregate",
+    "Startup Cost": 186.57,
+    "Total Cost": 932.86,
+    "Plan Rows": 8822.0,
+    "Plan Width": 41,
+    "Actual Rows": 7944.0,
+    "Actual Total Time": 806.9,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Startup Cost": 141.36,
+        "Total Cost": 706.79,
+        "Plan Rows": 39583.0,
+        "Plan Width": 25,
+        "Actual Rows": 50631.0,
+        "Actual Total Time": 713.34
+      }
+    ]
+  },
+  "execution_time": 806.9
+}

@@ -1,0 +1,15 @@
+{
+  "query_id": 12,
+  "hint_id": 1,
+  "sql": "SELECT ... -- synthetic 32",
+  "plan": {
+    "Node Type": "Index Scan",
+    "Startup Cost": 169.58,
+    "Total Cost": 847.9,
+    "Plan Rows": 50601.0,
+    "Plan Width": 56,
+    "Actual Rows": 50105.0,
+    "Actual Total Time": 1504.48
+  },
+  "execution_time": 1504.48
+}

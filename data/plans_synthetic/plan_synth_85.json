@@ -1,0 +1,35 @@
+{
+  "query_id": 5,
+  "hint_id": 4,
+  "sql": "SELECT ... -- synthetic 85",
+  "plan": {
+    "Node Type": "Nested Loop",
+    "Startup Cost": 58.78,
+    "Total Cost": 293.91,
+    "Plan Rows": 29134.0,
+    "Plan Width": 40,
+    "Actual Rows": 26704.0,
+    "Actual Total Time": 302.49,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Startup Cost": 176.96,
+        "Total Cost": 884.78,
+        "Plan Rows": 52353.0,
+        "Plan Width": 38,
+        "Actual Rows": 52737.0,
+        "Actual Total Time": 1707.71
+      },
+      {
+        "Node Type": "Limit",
+        "Startup Cost": 189.05,
+        "Total Cost": 945.26,
+        "Plan Rows": 55420.0,
+        "Plan Width": 44,
+        "Actual Rows": 49151.0,
+        "Actual Total Time": 1139.23
+      }
+    ]
+  },
+  "execution_time": 302.49
+}
