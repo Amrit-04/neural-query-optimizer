@@ -1,5 +1,12 @@
 # Neural Query Cost Model
 
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+
 A machine learning-based cost model that learns to predict database query execution times using Graph Neural Networks (GNNs). This model can augment or replace traditional handcrafted heuristics in query optimizers, enabling better plan selection through learned cost functions.
 
 ## The Problem
@@ -117,12 +124,33 @@ pip install -r requirements.txt
 3. **Set Python path** (required for imports):
 ```bash
 # Windows (PowerShell)
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 $env:PYTHONPATH="."
 
 # Windows (cmd)
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 set PYTHONPATH=.
 
 # Linux/macOS
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 export PYTHONPATH=.
 ```
 
@@ -132,15 +160,43 @@ No database required! Train and evaluate in minutes:
 
 ```bash
 # 1. Generate 200 synthetic query plans
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python scripts/generate_synthetic_plans.py --output data/plans_synthetic --num 200
 
 # 2. Train the model
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python scripts/train.py --data data/plans_synthetic --checkpoint checkpoints
 
 # 3. Evaluate performance
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python scripts/evaluate.py --data data/plans_synthetic --checkpoint checkpoints/best.pt
 
 # 4. Visualize embeddings (t-SNE)
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python scripts/visualize.py tsne --data data/plans_synthetic --output outputs/tsne.png
 ```
 
@@ -150,9 +206,30 @@ For production evaluation:
 
 ```bash
 # 1. Load TPC-H dataset into PostgreSQL
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # (Follow TPC-H installation guide)
 
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+
 # 2. Extract real execution plans
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python scripts/extract_plans.py \
   --host localhost \
   --dbname tpch \
@@ -160,9 +237,23 @@ python scripts/extract_plans.py \
   --output data/plans_real
 
 # 3. Train on real data
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python scripts/train.py --data data/plans_real --checkpoint checkpoints
 
 # 4. Evaluate
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-Graph%20Neural%20Networks-3C2179?style=flat)](https://pyg.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Query%20Plans-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python scripts/evaluate.py --data data/plans_real --checkpoint checkpoints/best.pt
 ```
 
