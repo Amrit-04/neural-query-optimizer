@@ -2,6 +2,7 @@
 PyTorch Dataset for plan graphs.
 
 Loads JSON plans, builds graphs, and returns batched Data objects.
+Includes query-aware grouping, native root cost extraction, and flat feature extraction for baselines.
 """
 
 from __future__ import annotations
@@ -13,7 +14,7 @@ from typing import Any
 import torch
 from torch.utils.data import Dataset
 
-from src.feature_encoder import OperatorVocabulary, node_features_to_tensor
+from src.feature_encoder import OperatorVocabulary, extract_flat_features, node_features_to_tensor
 from src.graph_builder import build_graph
 
 
@@ -26,11 +27,15 @@ class PlanGraphDataset(Dataset):
         vocab: OperatorVocabulary | None = None,
         max_depth: int = 32,
         target: str = "execution_time",
+        allowed_query_ids: set[Any] | None = None,
+        include_cost: bool = True,
     ):
         self.plan_dir = Path(plan_dir)
         self.max_depth = max_depth
         self.target_key = target
         self.vocab = vocab or OperatorVocabulary()
+        self.allowed_query_ids = allowed_query_ids
+        self.include_cost = include_cost
 
         self.files: list[Path] = []
         for f in sorted(self.plan_dir.glob("*.json")):
@@ -38,7 +43,9 @@ class PlanGraphDataset(Dataset):
                 with open(f) as fp:
                     data = json.load(fp)
                 if "plan" in data:
-                    self.files.append(f)
+                    qid = data.get("query_id")
+                    if self.allowed_query_ids is None or qid in self.allowed_query_ids:
+                        self.files.append(f)
             except (json.JSONDecodeError, KeyError):
                 pass
 
@@ -65,17 +72,16 @@ class PlanGraphDataset(Dataset):
         if edge_index.dim() == 1:
             edge_index = edge_index.unsqueeze(0)
 
-        feats = node_features_to_tensor(nodes, self.vocab, self.max_depth)
+        feats = node_features_to_tensor(nodes, self.vocab, self.max_depth, include_cost=self.include_cost)
         x_op = feats["operator_ids"]
         x_cont = feats["continuous"]
         depth = feats["depth"]
 
-        # Cardinality = root's actual_rows (for multi-task)
-        cardinality = nodes[0].get("actual_rows") if nodes else 0.0
-        if cardinality is not None:
-            cardinality = float(cardinality)
-        else:
-            cardinality = 0.0
+        cardinality = nodes[0].get("plan_rows") if nodes else 0.0
+        cardinality = float(cardinality) if cardinality is not None else 0.0
+
+        root_cost = float(nodes[0].get("total_cost") or 0.0) if nodes else 0.0
+        flat_feats = extract_flat_features(nodes, self.vocab)
 
         return {
             "x_op": x_op,
@@ -85,24 +91,32 @@ class PlanGraphDataset(Dataset):
             "batch_mask": torch.ones(len(nodes), dtype=torch.bool),
             "y": torch.tensor([target_val], dtype=torch.float32),
             "cardinality": torch.tensor([cardinality], dtype=torch.float32),
+            "root_cost": torch.tensor([root_cost], dtype=torch.float32),
+            "flat_features": torch.tensor(flat_feats, dtype=torch.float32),
             "query_id": data.get("query_id", idx),
             "num_nodes": len(nodes),
+            "plan_file": str(path.name),
+            "plan_raw": data,
         }
 
     def __getitem__(self, idx: int) -> dict[str, Any]:
         out = self._load_one(idx)
         if out is None:
-            # Fallback to a dummy sample if loading fails
+            cont_dim = 4 if self.include_cost else 2
             out = {
                 "x_op": torch.zeros(1, dtype=torch.long),
-                "x_cont": torch.zeros(1, 5),
+                "x_cont": torch.zeros(1, cont_dim),
                 "depth": torch.zeros(1, dtype=torch.long),
                 "edge_index": torch.zeros(2, 0, dtype=torch.long),
                 "batch_mask": torch.ones(1, dtype=torch.bool),
                 "y": torch.tensor([0.0]),
                 "cardinality": torch.tensor([0.0]),
+                "root_cost": torch.tensor([0.0]),
+                "flat_features": torch.zeros(6 + len(self.vocab)),
                 "query_id": idx,
                 "num_nodes": 1,
+                "plan_file": "",
+                "plan_raw": {},
             }
         return out
 
@@ -118,6 +132,11 @@ def collate_plan_graphs(batch: list[dict]) -> dict[str, Any]:
     edge_indices = []
     ys = []
     cardinalities = []
+    root_costs = []
+    flat_features = []
+    query_ids = []
+    plan_files = []
+    plan_raws = []
     batch_assign = []
     offset = 0
 
@@ -128,6 +147,11 @@ def collate_plan_graphs(batch: list[dict]) -> dict[str, Any]:
         depths.append(sample["depth"])
         ys.append(sample["y"])
         cardinalities.append(sample.get("cardinality", torch.tensor([0.0])))
+        root_costs.append(sample.get("root_cost", torch.tensor([0.0])))
+        flat_features.append(sample.get("flat_features", torch.zeros(6)))
+        query_ids.append(sample.get("query_id", i))
+        plan_files.append(sample.get("plan_file", ""))
+        plan_raws.append(sample.get("plan_raw", {}))
         batch_assign.extend([i] * n)
 
         ei = sample["edge_index"]
@@ -143,14 +167,19 @@ def collate_plan_graphs(batch: list[dict]) -> dict[str, Any]:
         "batch": torch.tensor(batch_assign, dtype=torch.long),
         "y": torch.cat(ys, dim=0),
         "cardinality": torch.cat(cardinalities, dim=0) if cardinalities else torch.zeros(len(batch)),
+        "root_cost": torch.cat(root_costs, dim=0),
+        "flat_features": torch.stack(flat_features, dim=0),
+        "query_ids": query_ids,
+        "plan_files": plan_files,
+        "plans": plan_raws,
         "batch_size": len(batch),
     }
 
 
 class PlanPairDataset(Dataset):
     """
-    Wrapper that yields pairs (plan_i, plan_j) for ranking loss.
-    Pairs are sampled from same query_id where runtime_i < runtime_j.
+    Wrapper that yields pairs (plan_fast, plan_slow) for ranking loss.
+    Pairs are sampled strictly from same query_id where runtime_fast < runtime_slow.
     """
 
     def __init__(self, base_dataset: PlanGraphDataset):
@@ -159,7 +188,7 @@ class PlanPairDataset(Dataset):
 
     def _build_groups(self) -> None:
         """Group indices by query_id."""
-        self.groups: dict[int, list[int]] = {}
+        self.groups: dict[Any, list[int]] = {}
         for i in range(len(self.base)):
             sample = self.base[i]
             qid = sample.get("query_id", i)

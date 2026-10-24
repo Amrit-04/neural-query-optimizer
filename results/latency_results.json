@@ -1,0 +1,38 @@
+{
+  "num_trials": 5,
+  "runs_per_trial": 500,
+  "warmup_runs": 50,
+  "threads": 1,
+  "batch_size": 1,
+  "plan_num_nodes": 14,
+  "model_only": {
+    "p50_ms": 0.181,
+    "p95_ms": 0.21,
+    "p99_ms": 0.269,
+    "mean_ms": 0.186,
+    "trials_p95": [
+      0.108,
+      0.266,
+      0.216,
+      0.21,
+      0.207
+    ]
+  },
+  "end_to_end": {
+    "p50_ms": 0.302,
+    "p95_ms": 0.439,
+    "p99_ms": 0.504,
+    "mean_ms": 0.32,
+    "trials_p95": [
+      0.37,
+      0.46,
+      0.439,
+      0.446,
+      0.42
+    ]
+  },
+  "benchmark_timestamp": "2026-10-24 13:34:46",
+  "total_duration_seconds": 1.32,
+  "onnx_file": "models\\best_real.onnx",
+  "model_type": "GNN"
+}

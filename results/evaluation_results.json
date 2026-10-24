@@ -1,0 +1,57 @@
+{
+  "evaluation_timestamp": "2026-10-23 17:52:20",
+  "elapsed_seconds": 0.66,
+  "test_queries_count": 5,
+  "test_plans_count": 40,
+  "gnn_model": {
+    "spearman_per_query": 0.7891954690196548,
+    "kendall_per_query": 0.6994019069393691,
+    "top1_accuracy": 1.0,
+    "mean_regret_ms": 0.0,
+    "median_regret_ms": 0.0,
+    "mae": 2388.783950139582,
+    "rmse": 3150.720657969178,
+    "r2": -1.3517978475968095,
+    "mre": 0.9980716767172109,
+    "spearman_pooled": 0.8081292132840386,
+    "kendall_pooled": 0.671927404017015,
+    "num_queries_evaluated": 5,
+    "num_plans_evaluated": 40
+  },
+  "baseline_postgres_native": {
+    "spearman_per_query": 0.9749097547339403,
+    "kendall_per_query": 0.942259049796512,
+    "top1_accuracy": 1.0,
+    "mean_regret_ms": 0.0,
+    "median_regret_ms": 0.0,
+    "mae": 16237.217121899128,
+    "rmse": 50982.82999014132,
+    "r2": -614.7835251698848,
+    "mre": 4.52075716406116,
+    "spearman_pooled": 0.9939838833782264,
+    "kendall_pooled": 0.9630526235524337,
+    "num_queries_evaluated": 5,
+    "num_plans_evaluated": 40
+  },
+  "baseline_gradient_boosting": {
+    "spearman_per_query": 0.9653573449243826,
+    "kendall_per_query": 0.9134254761617315,
+    "top1_accuracy": 0.8,
+    "mean_regret_ms": 6.45799560546875,
+    "median_regret_ms": 0.0,
+    "mae": 49.32184838086239,
+    "rmse": 68.67960174603427,
+    "r2": 0.9988825303828558,
+    "mre": 0.18618061717284712,
+    "spearman_pooled": 0.9915384271927767,
+    "kendall_pooled": 0.9422579650141895,
+    "num_queries_evaluated": 5,
+    "num_plans_evaluated": 40
+  },
+  "improvements": {
+    "top1_gain_pct_vs_postgres_native": 0.0,
+    "top1_gain_pct_vs_gradient_boosting": 25.0,
+    "regret_reduction_pct_vs_postgres_native": 0.0,
+    "regret_reduction_pct_vs_gradient_boosting": 100.0
+  }
+}

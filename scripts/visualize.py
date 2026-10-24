@@ -7,10 +7,15 @@ Visualization utilities for plan embeddings and ablation.
 
 from __future__ import annotations
 
+import argparse
 import json
 import logging
+import sys
 from pathlib import Path
 from typing import Any
+
+# Ensure project root in sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import numpy as np
 
@@ -93,8 +98,6 @@ def plot_tsne(
 def format_ablation_table(results: list[dict], output_path: Path | None = None) -> str:
     """
     Format ablation study results as Markdown table.
-
-    results: [{"variant": "GCN only", "mae": 0.5, "spearman": 0.8}, ...]
     """
     if not results:
         return ""
@@ -119,8 +122,6 @@ def format_ablation_table(results: list[dict], output_path: Path | None = None) 
 
 def main() -> None:
     """CLI for ablation table and t-SNE visualization."""
-    import argparse
-
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="cmd", help="Command")
     ablation = sub.add_parser("ablation")
@@ -128,7 +129,7 @@ def main() -> None:
     ablation.add_argument("--output", default="outputs/ablation.md")
     tsne_p = sub.add_parser("tsne")
     tsne_p.add_argument("--checkpoint", default="checkpoints/best.pt")
-    tsne_p.add_argument("--data", default="data/plans")
+    tsne_p.add_argument("--data", default="data/plans_synthetic")
     tsne_p.add_argument("--config", default="config/default.yaml")
     tsne_p.add_argument("--output", default="outputs/tsne_embeddings.png")
     tsne_p.add_argument("--max_samples", type=int, default=500)

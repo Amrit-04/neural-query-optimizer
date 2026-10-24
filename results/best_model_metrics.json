@@ -1,0 +1,20 @@
+{
+  "spearman_per_query": 0.7891954690196548,
+  "kendall_per_query": 0.6994019069393691,
+  "top1_accuracy": 1.0,
+  "mean_regret_ms": 0.0,
+  "median_regret_ms": 0.0,
+  "mae": 2388.783950139582,
+  "rmse": 3150.720657969178,
+  "r2": -1.3517978475968095,
+  "mre": 0.9980716767172109,
+  "spearman_pooled": 0.8081292132840386,
+  "kendall_pooled": 0.671927404017015,
+  "num_queries_evaluated": 5,
+  "num_plans_evaluated": 40,
+  "training_time_seconds": 17.78,
+  "model_type": "gat",
+  "pooling": "mean",
+  "embed_dim": 32,
+  "seed": 42
+}

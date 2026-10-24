@@ -1,0 +1,281 @@
+plan_id,query_id,actual_cost,predicted_cost,operator_types,plan_depth,absolute_error,relative_error
+plan_q00_p00.json,0,243.86000061035156,0.3877156376838684,"['Sort', 'Hash Aggregate', 'Hash Join', 'Index Only Scan', 'Seq Scan']",3,243.47229,0.9984101
+plan_q00_p01.json,0,176.19000244140625,0.3721565008163452,"['Merge Join', 'Index Only Scan', 'Seq Scan']",1,175.81784,0.99788773
+plan_q00_p02.json,0,3872.1298828125,0.549896240234375,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Index Scan']",2,3871.58,0.999858
+plan_q00_p03.json,0,1621.6199951171875,0.5162158012390137,"['Aggregate', 'Merge Join', 'Seq Scan', 'Seq Scan']",2,1621.1038,0.99968165
+plan_q00_p04.json,0,1266.72998046875,0.45684894919395447,"['Sort', 'Hash Join', 'Index Scan', 'Index Scan']",2,1266.2731,0.9996393
+plan_q00_p05.json,0,1118.93994140625,0.44482362270355225,"['Hash Join', 'Index Scan', 'Index Scan']",1,1118.4951,0.99960244
+plan_q00_p06.json,0,2054.8701171875,0.5043540000915527,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,2054.3657,0.99975455
+plan_q00_p07.json,0,195.05999755859375,0.3920347988605499,"['Nested Loop', 'Index Scan', 'Index Scan']",1,194.66797,0.9979902
+plan_q01_p00.json,1,5828.759765625,0.5428149700164795,"['Sort', 'Aggregate', 'Hash Join', 'Seq Scan', 'Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Only Scan', 'Seq Scan']",5,5828.217,0.99990684
+plan_q01_p01.json,1,3369.25,0.5383440852165222,"['Merge Join', 'Seq Scan', 'Merge Join', 'Index Only Scan', 'Merge Join', 'Index Only Scan', 'Merge Join', 'Seq Scan', 'Index Scan']",4,3368.7117,0.9998402
+plan_q01_p02.json,1,390.8399963378906,0.33837124705314636,"['Sort', 'Nested Loop', 'Nested Loop', 'Bitmap Heap Scan', 'Index Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Index Only Scan', 'Bitmap Heap Scan']",4,390.50162,0.99913424
+plan_q01_p03.json,1,1941.719970703125,0.43797174096107483,"['Aggregate', 'Hash Join', 'Nested Loop', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan']",4,1941.282,0.99977446
+plan_q01_p04.json,1,6000.0,0.4114548861980438,"['Sort', 'Merge Join', 'Hash Join', 'Nested Loop', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Index Scan']",4,5999.5884,0.9999314
+plan_q01_p05.json,1,760.0700073242188,0.3360065519809723,"['Hash Join', 'Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Index Scan']",3,759.734,0.9995579
+plan_q01_p06.json,1,5393.85986328125,0.5634094476699829,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,5393.2964,0.9998955
+plan_q01_p07.json,1,5.440000057220459,0.2699524760246277,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,5.1700478,0.9503763
+plan_q02_p00.json,2,711.7100219726562,0.4361598491668701,"['Sort', 'Hash Aggregate', 'Hash Join', 'Index Scan', 'Bitmap Heap Scan']",3,711.27386,0.99938715
+plan_q02_p01.json,2,177.6999969482422,0.3805510401725769,"['Merge Join', 'Index Only Scan', 'Index Only Scan']",1,177.31944,0.99785846
+plan_q02_p02.json,2,1521.5,0.5089386701583862,"['Sort', 'Nested Loop', 'Seq Scan', 'Seq Scan']",2,1520.9911,0.9996655
+plan_q02_p03.json,2,5955.77001953125,0.5973080396652222,"['Aggregate', 'Nested Loop', 'Seq Scan', 'Seq Scan']",2,5955.173,0.99989974
+plan_q02_p04.json,2,1753.22998046875,0.513685941696167,"['Sort', 'Merge Join', 'Index Scan', 'Index Scan']",2,1752.7163,0.99970704
+plan_q02_p05.json,2,1085.4000244140625,0.4415195882320404,"['Hash Join', 'Index Scan', 'Index Scan']",1,1084.9585,0.9995932
+plan_q02_p06.json,2,854.8900146484375,0.4460676610469818,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,854.444,0.9994782
+plan_q02_p07.json,2,2888.0400390625,0.5579288005828857,"['Nested Loop', 'Index Scan', 'Index Scan']",1,2887.4822,0.9998068
+plan_q03_p00.json,3,1627.8800048828125,0.4584938585758209,"['Sort', 'Hash Aggregate', 'Hash Join', 'Hash Join', 'Hash Join', 'Index Scan', 'Bitmap Heap Scan', 'Hash Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan', 'Index Only Scan']",5,1627.4215,0.99971837
+plan_q03_p01.json,3,858.8200073242188,0.41252779960632324,"['Merge Join', 'Merge Join', 'Bitmap Heap Scan', 'Merge Join', 'Index Scan', 'Index Only Scan', 'Merge Join', 'Index Scan', 'Index Scan']",3,858.4075,0.99951965
+plan_q03_p02.json,3,328.94000244140625,0.3732675611972809,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Only Scan']",4,328.56674,0.99886525
+plan_q03_p03.json,3,2157.02001953125,0.4015185236930847,"['Hash Aggregate', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan']",4,2156.6184,0.9998138
+plan_q03_p04.json,3,238.99000549316406,0.3239186704158783,"['Sort', 'Merge Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",5,238.66609,0.99864465
+plan_q03_p05.json,3,729.8099975585938,0.37760627269744873,"['Hash Join', 'Index Scan', 'Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,729.4324,0.9994826
+plan_q03_p06.json,3,790.6799926757812,0.43148091435432434,"['Sort', 'Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",6,790.24854,0.9994543
+plan_q03_p07.json,3,45.869998931884766,0.2590957581996918,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,45.610905,0.99435157
+plan_q04_p00.json,4,6000.0,0.5932434797286987,"['Sort', 'Aggregate', 'Hash Join', 'Index Only Scan', 'Hash Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",4,5999.4067,0.9999011
+plan_q04_p01.json,4,3442.699951171875,0.5434265732765198,"['Merge Join', 'Seq Scan', 'Merge Join', 'Index Only Scan', 'Index Only Scan']",2,3442.1565,0.99984217
+plan_q04_p02.json,4,6000.0,0.7117215394973755,"['Sort', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Only Scan', 'Bitmap Heap Scan']",3,5999.288,0.9998813
+plan_q04_p03.json,4,6000.0,0.6489919424057007,"['Hash Aggregate', 'Nested Loop', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan']",3,5999.351,0.9998918
+plan_q04_p04.json,4,6000.0,0.5904096364974976,"['Sort', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",3,5999.4097,0.9999016
+plan_q04_p05.json,4,386.75,0.410441130399704,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,386.33957,0.9989388
+plan_q04_p06.json,4,6000.0,0.5771714448928833,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,5999.423,0.9999038
+plan_q04_p07.json,4,6000.0,0.6474868059158325,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,5999.3525,0.9998921
+plan_q05_p00.json,5,1414.760009765625,0.4611811339855194,"['Sort', 'Hash Aggregate', 'Hash Join', 'Hash Join', 'Seq Scan', 'Hash Join', 'Index Only Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Seq Scan']",5,1414.2988,0.999674
+plan_q05_p01.json,5,1618.93994140625,0.43611809611320496,"['Merge Join', 'Merge Join', 'Bitmap Heap Scan', 'Index Scan', 'Merge Join', 'Index Only Scan', 'Merge Join', 'Bitmap Heap Scan', 'Index Scan']",3,1618.5038,0.9997306
+plan_q05_p02.json,5,6000.0,0.6049275398254395,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Index Scan', 'Index Only Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Index Only Scan']",4,5999.395,0.99989915
+plan_q05_p03.json,5,6000.0,0.6452944278717041,"['Aggregate', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Seq Scan']",5,5999.3545,0.9998924
+plan_q05_p04.json,5,6000.0,0.5499465465545654,"['Sort', 'Nested Loop', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,5999.45,0.9999084
+plan_q05_p05.json,5,1646.550048828125,0.44196969270706177,"['Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,1646.108,0.99973154
+plan_q05_p06.json,5,2883.699951171875,0.5126360654830933,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",6,2883.1873,0.9998222
+plan_q05_p07.json,5,425.010009765625,0.37590497732162476,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,424.6341,0.9991155
+plan_q06_p00.json,6,224.69000244140625,0.3789043128490448,"['Sort', 'Hash Aggregate', 'Hash Join', 'Index Only Scan', 'Bitmap Heap Scan']",3,224.3111,0.99831367
+plan_q06_p01.json,6,1251.010009765625,0.4909297227859497,"['Merge Join', 'Index Only Scan', 'Bitmap Heap Scan']",1,1250.519,0.99960756
+plan_q06_p02.json,6,2.2899999618530273,0.14019444584846497,"['Sort', 'Nested Loop', 'Index Scan', 'Index Only Scan']",2,2.1498055,0.93877935
+plan_q06_p03.json,6,3.5999999046325684,0.20169299840927124,"['Aggregate', 'Nested Loop', 'Seq Scan', 'Seq Scan']",2,3.3983068,0.9439739
+plan_q06_p04.json,6,2.4100000858306885,0.14494389295578003,"['Sort', 'Nested Loop', 'Index Scan', 'Index Scan']",2,2.2650561,0.9398569
+plan_q06_p05.json,6,316.5400085449219,0.3932481110095978,"['Hash Join', 'Index Scan', 'Index Scan']",1,316.14676,0.99875766
+plan_q06_p06.json,6,208.07000732421875,0.39115747809410095,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,207.67885,0.99812007
+plan_q06_p07.json,6,2.240000009536743,0.11850826442241669,"['Nested Loop', 'Index Scan', 'Index Scan']",1,2.1214917,0.9470941
+plan_q07_p00.json,7,356.9599914550781,0.40819939970970154,"['Sort', 'Aggregate', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Only Scan', 'Seq Scan']",4,356.5518,0.9988564
+plan_q07_p01.json,7,2436.43994140625,0.5017488598823547,"['Merge Join', 'Bitmap Heap Scan', 'Merge Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",2,2435.9382,0.99979407
+plan_q07_p02.json,7,6000.0,0.6120271682739258,"['Sort', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,5999.388,0.999898
+plan_q07_p03.json,7,1824.8800048828125,0.4976404011249542,"['Hash Aggregate', 'Merge Join', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,1824.3823,0.9997273
+plan_q07_p04.json,7,19.530000686645508,0.2715815305709839,"['Sort', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,19.258419,0.98609406
+plan_q07_p05.json,7,1273.5899658203125,0.4645260274410248,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,1273.1255,0.9996353
+plan_q07_p06.json,7,2568.360107421875,0.5243152379989624,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,2567.8357,0.9997958
+plan_q07_p07.json,7,1198.0999755859375,0.5038784742355347,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,1197.5961,0.9995794
+plan_q08_p00.json,8,1004.97998046875,0.44428375363349915,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Hash Join', 'Index Scan', 'Index Scan']",4,1004.5357,0.9995579
+plan_q08_p01.json,8,654.0800170898438,0.40056848526000977,"['Merge Join', 'Merge Join', 'Index Only Scan', 'Index Only Scan', 'Merge Join', 'Index Only Scan', 'Index Scan']",2,653.67944,0.99938756
+plan_q08_p02.json,8,6000.0,0.5654662847518921,"['Sort', 'Nested Loop', 'Nested Loop', 'Bitmap Heap Scan', 'Index Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,5999.4346,0.99990577
+plan_q08_p03.json,8,1059.6700439453125,0.43246808648109436,"['Hash Aggregate', 'Hash Join', 'Hash Join', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Seq Scan']",4,1059.2375,0.9995919
+plan_q08_p04.json,8,3887.510009765625,0.5406183004379272,"['Sort', 'Merge Join', 'Nested Loop', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",3,3886.9695,0.99986094
+plan_q08_p05.json,8,1157.469970703125,0.43748533725738525,"['Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,1157.0325,0.99962205
+plan_q08_p06.json,8,1805.4599609375,0.49097514152526855,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,1804.969,0.9997281
+plan_q08_p07.json,8,6000.0,0.46942785382270813,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,5999.531,0.9999218
+plan_q09_p00.json,9,1136.47998046875,0.46968701481819153,"['Sort', 'Hash Aggregate', 'Hash Join', 'Hash Join', 'Seq Scan', 'Hash Join', 'Bitmap Heap Scan', 'Seq Scan', 'Seq Scan']",5,1136.0103,0.9995867
+plan_q09_p01.json,9,1155.0400390625,0.4634058475494385,"['Merge Join', 'Seq Scan', 'Merge Join', 'Index Only Scan', 'Merge Join', 'Index Scan', 'Bitmap Heap Scan']",3,1154.5767,0.9995988
+plan_q09_p02.json,9,104.9000015258789,0.3572898805141449,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Index Scan', 'Nested Loop', 'Seq Scan', 'Bitmap Heap Scan']",3,104.54271,0.99659395
+plan_q09_p03.json,9,54.72999954223633,0.3008938431739807,"['Aggregate', 'Nested Loop', 'Merge Join', 'Seq Scan', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,54.429104,0.9945022
+plan_q09_p04.json,9,899.6400146484375,0.42966774106025696,"['Sort', 'Nested Loop', 'Index Scan', 'Hash Join', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",4,899.2103,0.9995224
+plan_q09_p05.json,9,960.3800048828125,0.4551188051700592,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,959.92487,0.9995261
+plan_q09_p06.json,9,2622.6298828125,0.5066943168640137,"['Sort', 'Hash Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,2622.1233,0.9998068
+plan_q09_p07.json,9,168.74000549316406,0.3722971975803375,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,168.3677,0.9977937
+plan_q10_p00.json,10,1746.010009765625,0.4762116074562073,"['Sort', 'Hash Aggregate', 'Hash Join', 'Hash Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan', 'Hash Join', 'Seq Scan', 'Hash Join', 'Index Scan', 'Seq Scan']",5,1745.5338,0.99972725
+plan_q10_p01.json,10,6000.0,0.583871603012085,"['Merge Join', 'Merge Join', 'Merge Join', 'Seq Scan', 'Merge Join', 'Index Scan', 'Index Only Scan', 'Bitmap Heap Scan', 'Index Only Scan']",4,5999.416,0.99990267
+plan_q10_p02.json,10,6000.0,0.5635228157043457,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Seq Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Only Scan', 'Index Scan']",4,5999.4365,0.99990606
+plan_q10_p03.json,10,3331.4599609375,0.4928114414215088,"['Hash Aggregate', 'Merge Join', 'Merge Join', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",4,3330.967,0.99985206
+plan_q10_p04.json,10,6000.0,0.6805959939956665,"['Sort', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,5999.3193,0.9998866
+plan_q10_p05.json,10,3306.860107421875,0.5104296803474426,"['Hash Join', 'Index Scan', 'Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,3306.3496,0.9998456
+plan_q10_p06.json,10,3186.6201171875,0.5271759033203125,"['Sort', 'Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,3186.093,0.9998346
+plan_q10_p07.json,10,6000.0,0.4630044400691986,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,5999.537,0.9999229
+plan_q11_p00.json,11,2667.260009765625,0.5183248519897461,"['Sort', 'Hash Aggregate', 'Hash Join', 'Index Scan', 'Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",6,2666.7417,0.9998057
+plan_q11_p01.json,11,2291.7900390625,0.512446403503418,"['Merge Join', 'Seq Scan', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Bitmap Heap Scan', 'Index Only Scan', 'Bitmap Heap Scan']",4,2291.2776,0.9997764
+plan_q11_p02.json,11,111.48999786376953,0.42396461963653564,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Only Scan', 'Index Only Scan', 'Index Only Scan']",5,111.06603,0.9961973
+plan_q11_p03.json,11,2593.389892578125,0.6631375551223755,"['Hash Aggregate', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",5,2592.7268,0.9997443
+plan_q11_p04.json,11,2349.64990234375,0.4737096428871155,"['Sort', 'Hash Join', 'Nested Loop', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",4,2349.1763,0.9997984
+plan_q11_p05.json,11,1102.3599853515625,0.4270194172859192,"['Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,1101.933,0.9996126
+plan_q11_p06.json,11,6000.0,0.5926166772842407,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",6,5999.407,0.9999012
+plan_q11_p07.json,11,9.4399995803833,0.33865007758140564,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,9.10135,0.964126
+plan_q12_p00.json,12,670.719970703125,0.42618635296821594,"['Sort', 'Hash Aggregate', 'Hash Join', 'Bitmap Heap Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Seq Scan', 'Seq Scan']",5,670.29376,0.99936455
+plan_q12_p01.json,12,195.05999755859375,0.33645904064178467,"['Merge Join', 'Merge Join', 'Bitmap Heap Scan', 'Index Scan', 'Merge Join', 'Index Only Scan', 'Index Scan']",2,194.72354,0.9982751
+plan_q12_p02.json,12,502.6400146484375,0.42496389150619507,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Index Only Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",4,502.21506,0.99915457
+plan_q12_p03.json,12,6000.0,0.5814025402069092,"['Hash Aggregate', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan', 'Seq Scan']",4,5999.4185,0.9999031
+plan_q12_p04.json,12,505.7099914550781,0.3952292501926422,"['Sort', 'Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,505.31476,0.99921846
+plan_q12_p05.json,12,411.8699951171875,0.394319087266922,"['Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Index Scan']",3,411.47568,0.99904263
+plan_q12_p06.json,12,748.4299926757812,0.4341683089733124,"['Sort', 'Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,747.99585,0.9994199
+plan_q12_p07.json,12,606.989990234375,0.45659351348876953,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Index Scan']",3,606.5334,0.9992477
+plan_q13_p00.json,13,751.1300048828125,0.41531533002853394,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Only Scan', 'Index Only Scan']",5,750.71466,0.99944705
+plan_q13_p01.json,13,824.469970703125,0.4230330288410187,"['Merge Join', 'Merge Join', 'Bitmap Heap Scan', 'Merge Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan', 'Index Only Scan']",3,824.04694,0.9994869
+plan_q13_p02.json,13,12.039999961853027,0.2743542492389679,"['Sort', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Seq Scan', 'Bitmap Heap Scan', 'Index Only Scan']",4,11.765646,0.977213
+plan_q13_p03.json,13,3105.25,0.5116561651229858,"['Aggregate', 'Hash Join', 'Merge Join', 'Seq Scan', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,3104.7383,0.9998352
+plan_q13_p04.json,13,1472.8800048828125,0.4866994023323059,"['Sort', 'Hash Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,1472.3933,0.99966955
+plan_q13_p05.json,13,1669.1500244140625,0.4585703909397125,"['Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,1668.6914,0.9997252
+plan_q13_p06.json,13,1396.3599853515625,0.4802887737751007,"['Sort', 'Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,1395.8796,0.999656
+plan_q13_p07.json,13,19.389999389648438,0.3906615078449249,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,18.999338,0.9798523
+plan_q14_p00.json,14,915.5499877929688,0.41438448429107666,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Hash Join', 'Bitmap Heap Scan', 'Hash Join', 'Index Only Scan', 'Index Scan', 'Index Only Scan', 'Index Scan']",6,915.1356,0.9995474
+plan_q14_p01.json,14,2294.389892578125,0.4863808751106262,"['Merge Join', 'Merge Join', 'Bitmap Heap Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Merge Join', 'Index Scan', 'Bitmap Heap Scan']",3,2293.9036,0.99978805
+plan_q14_p02.json,14,894.489990234375,0.43129292130470276,"['Sort', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Index Only Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Only Scan', 'Index Only Scan']",4,894.0587,0.99951786
+plan_q14_p03.json,14,5091.8701171875,0.46432045102119446,"['Aggregate', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Merge Join', 'Seq Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan']",4,5091.406,0.9999088
+plan_q14_p04.json,14,2825.669921875,0.4959319233894348,"['Sort', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",4,2825.174,0.9998245
+plan_q14_p05.json,14,1270.300048828125,0.4531296193599701,"['Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,1269.8469,0.99964327
+plan_q14_p06.json,14,1910.06005859375,0.49077698588371277,"['Sort', 'Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,1909.5693,0.9997431
+plan_q14_p07.json,14,35.81999969482422,0.252935528755188,"['Nested Loop', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Index Scan']",3,35.567062,0.99293864
+plan_q15_p00.json,15,838.4099731445312,0.47789356112480164,"['Sort', 'Aggregate', 'Hash Join', 'Seq Scan', 'Index Only Scan']",3,837.93207,0.99943
+plan_q15_p01.json,15,907.719970703125,0.48391810059547424,"['Merge Join', 'Index Scan', 'Index Only Scan']",1,907.236,0.99946684
+plan_q15_p02.json,15,6000.0,0.6199045181274414,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",2,5999.38,0.99989665
+plan_q15_p03.json,15,879.1799926757812,0.4945666790008545,"['Hash Aggregate', 'Hash Join', 'Seq Scan', 'Seq Scan']",2,878.6854,0.99943745
+plan_q15_p04.json,15,806.1199951171875,0.4570862948894501,"['Sort', 'Hash Join', 'Index Scan', 'Index Scan']",2,805.6629,0.999433
+plan_q15_p05.json,15,1846.8399658203125,0.5316013097763062,"['Hash Join', 'Index Scan', 'Index Scan']",1,1846.3083,0.99971217
+plan_q15_p06.json,15,3095.64990234375,0.5590828061103821,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,3095.0908,0.9998194
+plan_q15_p07.json,15,6000.0,0.6065393686294556,"['Nested Loop', 'Index Scan', 'Index Scan']",1,5999.3936,0.9998989
+plan_q16_p00.json,16,606.239990234375,0.4345778226852417,"['Sort', 'Aggregate', 'Hash Join', 'Index Only Scan', 'Hash Join', 'Seq Scan', 'Seq Scan']",4,605.8054,0.9992832
+plan_q16_p01.json,16,810.030029296875,0.4294482469558716,"['Merge Join', 'Bitmap Heap Scan', 'Merge Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",2,809.6006,0.9994698
+plan_q16_p02.json,16,185.97000122070312,0.35964399576187134,"['Sort', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,185.61035,0.99806607
+plan_q16_p03.json,16,6000.0,0.5531024932861328,"['Hash Aggregate', 'Nested Loop', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan']",3,5999.447,0.9999078
+plan_q16_p04.json,16,215.4600067138672,0.363484650850296,"['Sort', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,215.09653,0.998313
+plan_q16_p05.json,16,279.54998779296875,0.3776386082172394,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,279.17236,0.9986492
+plan_q16_p06.json,16,255.2100067138672,0.3655826151371002,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,254.84442,0.9985675
+plan_q16_p07.json,16,129.08999633789062,0.2922341227531433,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,128.79776,0.99773616
+plan_q17_p00.json,17,2098.719970703125,0.5360903143882751,"['Sort', 'Hash Aggregate', 'Hash Join', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan']",4,2098.1838,0.99974453
+plan_q17_p01.json,17,510.7200012207031,0.41832998394966125,"['Merge Join', 'Index Only Scan', 'Merge Join', 'Index Only Scan', 'Bitmap Heap Scan']",2,510.30167,0.9991809
+plan_q17_p02.json,17,6000.0,0.7173212766647339,"['Sort', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",3,5999.2827,0.99988043
+plan_q17_p03.json,17,2695.219970703125,0.5513414144515991,"['Aggregate', 'Merge Join', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan']",3,2694.6687,0.99979544
+plan_q17_p04.json,17,6000.0,0.5785559415817261,"['Sort', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,5999.4214,0.99990356
+plan_q17_p05.json,17,731.6400146484375,0.4490963816642761,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,731.1909,0.9993862
+plan_q17_p06.json,17,6000.0,0.6288009881973267,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,5999.371,0.99989516
+plan_q17_p07.json,17,1247.489990234375,0.5338133573532104,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,1246.9562,0.9995721
+plan_q18_p00.json,18,6000.0,0.524620532989502,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Bitmap Heap Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Seq Scan']",5,5999.4756,0.9999126
+plan_q18_p01.json,18,2158.409912109375,0.4608919322490692,"['Merge Join', 'Merge Join', 'Index Only Scan', 'Merge Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan', 'Merge Join', 'Index Only Scan', 'Index Only Scan']",3,2157.949,0.99978644
+plan_q18_p02.json,18,5926.169921875,0.5320336818695068,"['Sort', 'Nested Loop', 'Nested Loop', 'Index Only Scan', 'Bitmap Heap Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Index Scan', 'Seq Scan']",4,5925.6377,0.9999102
+plan_q18_p03.json,18,6000.0,0.6102420091629028,"['Hash Aggregate', 'Nested Loop', 'Hash Join', 'Nested Loop', 'Seq Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan', 'Seq Scan']",4,5999.3896,0.99989825
+plan_q18_p04.json,18,6000.0,0.5385210514068604,"['Sort', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",4,5999.4614,0.99991024
+plan_q18_p05.json,18,5702.47021484375,0.521609902381897,"['Hash Join', 'Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Index Scan', 'Index Scan']",4,5701.9487,0.99990857
+plan_q18_p06.json,18,1857.0799560546875,0.47713595628738403,"['Sort', 'Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,1856.6028,0.99974304
+plan_q18_p07.json,18,6000.0,0.6617810726165771,"['Nested Loop', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Index Scan', 'Index Scan']",4,5999.3384,0.99988973
+plan_q19_p00.json,19,772.3800048828125,0.45989546179771423,"['Sort', 'Hash Aggregate', 'Hash Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",3,771.9201,0.99940455
+plan_q19_p01.json,19,942.4600219726562,0.45917558670043945,"['Merge Join', 'Index Only Scan', 'Bitmap Heap Scan']",1,942.00085,0.9995128
+plan_q19_p02.json,19,1997.739990234375,0.5450358390808105,"['Sort', 'Nested Loop', 'Index Scan', 'Index Only Scan']",2,1997.195,0.9997272
+plan_q19_p03.json,19,284.6000061035156,0.3810711205005646,"['Hash Aggregate', 'Merge Join', 'Seq Scan', 'Seq Scan']",2,284.21893,0.99866104
+plan_q19_p04.json,19,608.1599731445312,0.4590090215206146,"['Sort', 'Nested Loop', 'Index Scan', 'Index Scan']",2,607.701,0.9992453
+plan_q19_p05.json,19,990.1300048828125,0.43725889921188354,"['Hash Join', 'Index Scan', 'Index Scan']",1,989.69275,0.9995584
+plan_q19_p06.json,19,458.6300048828125,0.42645999789237976,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,458.20355,0.99907017
+plan_q19_p07.json,19,1266.1700439453125,0.5385522842407227,"['Nested Loop', 'Index Scan', 'Index Scan']",1,1265.6315,0.99957466
+plan_q20_p00.json,20,846.010009765625,0.4451182186603546,"['Sort', 'Hash Aggregate', 'Hash Join', 'Seq Scan', 'Hash Join', 'Index Only Scan', 'Index Scan']",4,845.5649,0.99947387
+plan_q20_p01.json,20,1033.219970703125,0.4729570746421814,"['Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",2,1032.7471,0.9995423
+plan_q20_p02.json,20,6000.0,0.560328483581543,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Seq Scan', 'Index Only Scan']",3,5999.4395,0.9999066
+plan_q20_p03.json,20,6000.0,0.6275899410247803,"['Hash Aggregate', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,5999.3726,0.99989545
+plan_q20_p04.json,20,6000.0,0.5404933094978333,"['Sort', 'Nested Loop', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,5999.4595,0.99990994
+plan_q20_p05.json,20,1007.6799926757812,0.43542200326919556,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,1007.24457,0.99956787
+plan_q20_p06.json,20,2585.02001953125,0.5238798260688782,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,2584.496,0.99979734
+plan_q20_p07.json,20,611.6599731445312,0.4219609498977661,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,611.23804,0.9993102
+plan_q21_p00.json,21,3719.889892578125,0.5399777889251709,"['Sort', 'Hash Aggregate', 'Hash Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",3,3719.3499,0.9998548
+plan_q21_p01.json,21,2770.169921875,0.5467915534973145,"['Merge Join', 'Index Only Scan', 'Bitmap Heap Scan']",1,2769.623,0.9998026
+plan_q21_p02.json,21,3991.85009765625,0.5520049333572388,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Index Only Scan']",2,3991.298,0.9998617
+plan_q21_p03.json,21,6000.0,0.6798994541168213,"['Hash Aggregate', 'Nested Loop', 'Seq Scan', 'Seq Scan']",2,5999.3203,0.9998867
+plan_q21_p04.json,21,1427.4100341796875,0.48491981625556946,"['Sort', 'Merge Join', 'Index Scan', 'Index Scan']",2,1426.9252,0.9996603
+plan_q21_p05.json,21,4831.85986328125,0.546470046043396,"['Hash Join', 'Index Scan', 'Index Scan']",1,4831.3135,0.99988693
+plan_q21_p06.json,21,2426.699951171875,0.5357812643051147,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,2426.164,0.99977916
+plan_q21_p07.json,21,690.010009765625,0.4644600450992584,"['Nested Loop', 'Index Scan', 'Index Scan']",1,689.54553,0.9993268
+plan_q22_p00.json,22,2654.030029296875,0.5454329252243042,"['Sort', 'Aggregate', 'Hash Join', 'Index Only Scan', 'Hash Join', 'Bitmap Heap Scan', 'Seq Scan']",4,2653.4846,0.9997945
+plan_q22_p01.json,22,1274.1500244140625,0.4745807945728302,"['Merge Join', 'Bitmap Heap Scan', 'Merge Join', 'Index Only Scan', 'Index Only Scan']",2,1273.6754,0.99962753
+plan_q22_p02.json,22,6000.0,0.7495476007461548,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Index Only Scan', 'Bitmap Heap Scan']",3,5999.2505,0.99987507
+plan_q22_p03.json,22,6000.0,0.6537467241287231,"['Aggregate', 'Hash Join', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,5999.346,0.99989104
+plan_q22_p04.json,22,4833.490234375,0.5629690885543823,"['Sort', 'Merge Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,4832.9272,0.99988353
+plan_q22_p05.json,22,6000.0,0.6310446262359619,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,5999.369,0.99989486
+plan_q22_p06.json,22,6000.0,0.6162056922912598,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,5999.384,0.9998973
+plan_q22_p07.json,22,6000.0,0.662786602973938,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,5999.3374,0.99988955
+plan_q23_p00.json,23,273.6700134277344,0.37272408604621887,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",5,273.2973,0.9986381
+plan_q23_p01.json,23,391.7799987792969,0.38859090209007263,"['Merge Join', 'Merge Join', 'Index Only Scan', 'Merge Join', 'Bitmap Heap Scan', 'Seq Scan', 'Bitmap Heap Scan']",3,391.39142,0.9990082
+plan_q23_p02.json,23,3949.800048828125,0.55559241771698,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Seq Scan', 'Nested Loop', 'Index Scan', 'Bitmap Heap Scan']",3,3949.2444,0.99985933
+plan_q23_p03.json,23,585.739990234375,0.4007675349712372,"['Hash Aggregate', 'Hash Join', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",4,585.33923,0.9993158
+plan_q23_p04.json,23,109.81999969482422,0.30479687452316284,"['Sort', 'Nested Loop', 'Index Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,109.515205,0.9972246
+plan_q23_p05.json,23,131.1300048828125,0.32901325821876526,"['Hash Join', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,130.801,0.99749094
+plan_q23_p06.json,23,1362.0999755859375,0.44439199566841125,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,1361.6556,0.9996738
+plan_q23_p07.json,23,182.16000366210938,0.34388986229896545,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Index Scan']",3,181.81612,0.99811214
+plan_q24_p00.json,24,1648.8599853515625,0.5233597755432129,"['Sort', 'Aggregate', 'Hash Join', 'Seq Scan', 'Bitmap Heap Scan']",3,1648.3367,0.9996826
+plan_q24_p01.json,24,4726.2099609375,0.5845953226089478,"['Merge Join', 'Seq Scan', 'Seq Scan']",1,4725.6255,0.9998763
+plan_q24_p02.json,24,6000.0,0.5892260074615479,"['Sort', 'Nested Loop', 'Index Only Scan', 'Index Only Scan']",2,5999.4106,0.9999018
+plan_q24_p03.json,24,4539.83984375,0.6139252185821533,"['Aggregate', 'Hash Join', 'Seq Scan', 'Seq Scan']",2,4539.226,0.9998648
+plan_q24_p04.json,24,315.5899963378906,0.40529170632362366,"['Sort', 'Hash Join', 'Index Scan', 'Index Scan']",2,315.1847,0.9987157
+plan_q24_p05.json,24,2959.719970703125,0.5737582445144653,"['Hash Join', 'Index Scan', 'Index Scan']",1,2959.1462,0.99980617
+plan_q24_p06.json,24,979.52001953125,0.4696286618709564,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,979.0504,0.9995206
+plan_q24_p07.json,24,6000.0,0.6185014247894287,"['Nested Loop', 'Index Scan', 'Index Scan']",1,5999.3813,0.9998969
+plan_q25_p00.json,25,412.0899963378906,0.39969417452812195,"['Sort', 'Aggregate', 'Hash Join', 'Bitmap Heap Scan', 'Hash Join', 'Bitmap Heap Scan', 'Index Only Scan']",4,411.6903,0.9990301
+plan_q25_p01.json,25,588.8400268554688,0.43219897150993347,"['Merge Join', 'Index Scan', 'Merge Join', 'Index Only Scan', 'Index Scan']",2,588.40784,0.999266
+plan_q25_p02.json,25,48.0,0.2534307837486267,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Index Only Scan', 'Seq Scan']",3,47.74657,0.9947202
+plan_q25_p03.json,25,1078.75,0.4675850570201874,"['Hash Aggregate', 'Hash Join', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan']",3,1078.2825,0.9995666
+plan_q25_p04.json,25,107.52999877929688,0.3175046443939209,"['Sort', 'Merge Join', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,107.212494,0.9970473
+plan_q25_p05.json,25,1235.93994140625,0.4768601655960083,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,1235.4631,0.99961424
+plan_q25_p06.json,25,246.2899932861328,0.374847948551178,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,245.91515,0.998478
+plan_q25_p07.json,25,156.61000061035156,0.33496883511543274,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,156.27502,0.9978611
+plan_q26_p00.json,26,106.0999984741211,0.33763277530670166,"['Sort', 'Hash Aggregate', 'Hash Join', 'Index Scan', 'Index Only Scan']",3,105.76237,0.9968178
+plan_q26_p01.json,26,60.970001220703125,0.29573768377304077,"['Merge Join', 'Index Scan', 'Index Only Scan']",1,60.674263,0.99514943
+plan_q26_p02.json,26,505.760009765625,0.41690459847450256,"['Sort', 'Nested Loop', 'Seq Scan', 'Bitmap Heap Scan']",2,505.3431,0.99917567
+plan_q26_p03.json,26,258.30999755859375,0.3955671191215515,"['Hash Aggregate', 'Hash Join', 'Seq Scan', 'Seq Scan']",2,257.91443,0.99846864
+plan_q26_p04.json,26,207.8300018310547,0.3791605532169342,"['Sort', 'Merge Join', 'Index Scan', 'Index Scan']",2,207.45084,0.9981756
+plan_q26_p05.json,26,148.6300048828125,0.3554045259952545,"['Hash Join', 'Index Scan', 'Index Scan']",1,148.2746,0.9976088
+plan_q26_p06.json,26,334.2099914550781,0.4269351065158844,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,333.78305,0.99872255
+plan_q26_p07.json,26,41.849998474121094,0.265019953250885,"['Nested Loop', 'Index Scan', 'Index Scan']",1,41.58498,0.9936674
+plan_q27_p00.json,27,1044.6500244140625,0.445573091506958,"['Sort', 'Aggregate', 'Hash Join', 'Seq Scan', 'Hash Join', 'Bitmap Heap Scan', 'Hash Join', 'Seq Scan', 'Index Only Scan']",5,1044.2045,0.99957347
+plan_q27_p01.json,27,868.3499755859375,0.4195765256881714,"['Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Seq Scan', 'Bitmap Heap Scan', 'Index Only Scan']",3,867.9304,0.99951684
+plan_q27_p02.json,27,4206.4599609375,0.5290656685829163,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Index Only Scan', 'Nested Loop', 'Index Only Scan', 'Seq Scan']",3,4205.9307,0.9998742
+plan_q27_p03.json,27,410.6199951171875,0.4037894308567047,"['Aggregate', 'Nested Loop', 'Merge Join', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan', 'Seq Scan']",4,410.21622,0.99901664
+plan_q27_p04.json,27,846.1400146484375,0.455498069524765,"['Sort', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Index Scan']",4,845.6845,0.99946165
+plan_q27_p05.json,27,1443.81005859375,0.4393661916255951,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,1443.3707,0.9996957
+plan_q27_p06.json,27,1822.8900146484375,0.49220725893974304,"['Sort', 'Hash Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",5,1822.3978,0.99973
+plan_q27_p07.json,27,81.9000015258789,0.2796784043312073,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,81.62032,0.99658513
+plan_q28_p00.json,28,91.5,0.3174382448196411,"['Sort', 'Hash Aggregate', 'Hash Join', 'Index Scan', 'Seq Scan']",3,91.18256,0.9965308
+plan_q28_p01.json,28,32.15999984741211,0.2628450393676758,"['Merge Join', 'Index Only Scan', 'Index Scan']",1,31.897156,0.991827
+plan_q28_p02.json,28,311.3699951171875,0.41237711906433105,"['Sort', 'Nested Loop', 'Bitmap Heap Scan', 'Index Scan']",2,310.9576,0.9986756
+plan_q28_p03.json,28,44.900001525878906,0.29878032207489014,"['Hash Aggregate', 'Hash Join', 'Seq Scan', 'Seq Scan']",2,44.601223,0.9933457
+plan_q28_p04.json,28,170.42999267578125,0.3965913653373718,"['Sort', 'Nested Loop', 'Index Scan', 'Index Scan']",2,170.0334,0.997673
+plan_q28_p05.json,28,322.3399963378906,0.3804227411746979,"['Hash Join', 'Index Scan', 'Index Scan']",1,321.95956,0.99881977
+plan_q28_p06.json,28,129.0399932861328,0.34277093410491943,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Index Scan']",3,128.69722,0.99734366
+plan_q28_p07.json,28,358.07000732421875,0.4190956652164459,"['Nested Loop', 'Index Scan', 'Index Scan']",1,357.6509,0.99882954
+plan_q29_p00.json,29,1523.780029296875,0.4617045223712921,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Only Scan', 'Hash Join', 'Index Scan', 'Index Only Scan']",5,1523.3184,0.999697
+plan_q29_p01.json,29,4470.35009765625,0.5119510293006897,"['Merge Join', 'Merge Join', 'Index Scan', 'Bitmap Heap Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",3,4469.8384,0.99988556
+plan_q29_p02.json,29,6.809999942779541,0.2901352047920227,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Bitmap Heap Scan', 'Nested Loop', 'Index Only Scan', 'Nested Loop', 'Seq Scan', 'Index Only Scan']",4,6.5198646,0.95739555
+plan_q29_p03.json,29,37.2400016784668,0.3744756877422333,"['Hash Aggregate', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",4,36.865524,0.9899442
+plan_q29_p04.json,29,3992.6201171875,0.5530194044113159,"['Sort', 'Hash Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",5,3992.0671,0.9998615
+plan_q29_p05.json,29,3209.1298828125,0.4985909163951874,"['Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Index Scan']",4,3208.6313,0.9998447
+plan_q29_p06.json,29,6000.0,0.589727520942688,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,5999.41,0.9999017
+plan_q29_p07.json,29,11.3100004196167,0.3297043442726135,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Index Scan']",4,10.980296,0.9708483
+plan_q30_p00.json,30,1546.47998046875,0.4881427586078644,"['Sort', 'Hash Aggregate', 'Hash Join', 'Bitmap Heap Scan', 'Hash Join', 'Index Scan', 'Bitmap Heap Scan']",4,1545.9918,0.99968433
+plan_q30_p01.json,30,482.6600036621094,0.42148759961128235,"['Merge Join', 'Index Only Scan', 'Merge Join', 'Index Scan', 'Index Only Scan']",2,482.23853,0.99912673
+plan_q30_p02.json,30,82.26000213623047,0.4008559286594391,"['Sort', 'Nested Loop', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Bitmap Heap Scan']",3,81.859146,0.99512696
+plan_q30_p03.json,30,122.83000183105469,0.4123600125312805,"['Aggregate', 'Nested Loop', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Seq Scan']",3,122.41764,0.9966428
+plan_q30_p04.json,30,1696.6300048828125,0.5118361711502075,"['Sort', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",3,1696.1182,0.99969834
+plan_q30_p05.json,30,1849.5699462890625,0.48736509680747986,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",2,1849.0826,0.99973655
+plan_q30_p06.json,30,6000.0,0.6278339624404907,"['Sort', 'Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,5999.372,0.99989533
+plan_q30_p07.json,30,11.489999771118164,0.3079453110694885,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,11.1820545,0.9731988
+plan_q31_p00.json,31,1787.1700439453125,0.4808167517185211,"['Sort', 'Hash Aggregate', 'Hash Join', 'Hash Join', 'Index Only Scan', 'Seq Scan', 'Hash Join', 'Seq Scan', 'Bitmap Heap Scan']",4,1786.6892,0.99973094
+plan_q31_p01.json,31,1165.4100341796875,0.4625910520553589,"['Merge Join', 'Merge Join', 'Index Only Scan', 'Seq Scan', 'Merge Join', 'Index Scan', 'Bitmap Heap Scan']",2,1164.9474,0.99960303
+plan_q31_p02.json,31,6000.0,0.618506669998169,"['Sort', 'Nested Loop', 'Nested Loop', 'Index Only Scan', 'Bitmap Heap Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",3,5999.3813,0.9998969
+plan_q31_p03.json,31,6000.0,0.5702265501022339,"['Aggregate', 'Nested Loop', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan']",3,5999.4297,0.99990493
+plan_q31_p04.json,31,6000.0,0.610411524772644,"['Sort', 'Merge Join', 'Nested Loop', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",4,5999.3896,0.99989825
+plan_q31_p05.json,31,6000.0,0.46104303002357483,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,5999.539,0.99992317
+plan_q31_p06.json,31,5252.81005859375,0.555635392665863,"['Sort', 'Hash Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",5,5252.2544,0.9998942
+plan_q31_p07.json,31,6000.0,0.6649025678634644,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",2,5999.335,0.99988914
+plan_q32_p00.json,32,3229.7900390625,0.5084269642829895,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Hash Join', 'Bitmap Heap Scan', 'Hash Join', 'Index Scan', 'Bitmap Heap Scan', 'Seq Scan', 'Bitmap Heap Scan']",6,3229.2815,0.9998425
+plan_q32_p01.json,32,3400.89990234375,0.5367316007614136,"['Merge Join', 'Seq Scan', 'Merge Join', 'Merge Join', 'Bitmap Heap Scan', 'Merge Join', 'Seq Scan', 'Index Only Scan', 'Index Only Scan']",4,3400.3633,0.9998422
+plan_q32_p02.json,32,283.3299865722656,0.5171103477478027,"['Sort', 'Nested Loop', 'Nested Loop', 'Seq Scan', 'Index Only Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",4,282.81287,0.99817485
+plan_q32_p03.json,32,4391.77978515625,0.554273247718811,"['Aggregate', 'Hash Join', 'Hash Join', 'Hash Join', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Seq Scan', 'Seq Scan', 'Seq Scan']",5,4391.2256,0.9998738
+plan_q32_p04.json,32,5899.83984375,0.5260344743728638,"['Sort', 'Merge Join', 'Nested Loop', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",4,5899.314,0.9999109
+plan_q32_p05.json,32,3324.2900390625,0.517989993095398,"['Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,3323.772,0.99984413
+plan_q32_p06.json,32,6000.0,0.5598888993263245,"['Sort', 'Hash Aggregate', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,5999.44,0.99990666
+plan_q32_p07.json,32,5.579999923706055,0.25430601835250854,"['Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",3,5.325694,0.95442533
+plan_q33_p00.json,33,1775.3599853515625,0.4573860764503479,"['Sort', 'Hash Aggregate', 'Hash Join', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Hash Join', 'Index Only Scan', 'Hash Join', 'Index Only Scan', 'Index Only Scan']",5,1774.9026,0.9997424
+plan_q33_p01.json,33,517.8800048828125,0.3908088505268097,"['Merge Join', 'Index Only Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Seq Scan', 'Merge Join', 'Bitmap Heap Scan', 'Bitmap Heap Scan']",4,517.4892,0.99924535
+plan_q33_p02.json,33,2294.340087890625,0.4196268916130066,"['Sort', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Index Scan', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Index Scan', 'Seq Scan']",4,2293.9204,0.9998171
+plan_q33_p03.json,33,3393.1298828125,0.48953479528427124,"['Hash Aggregate', 'Nested Loop', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",4,3392.6404,0.99985576
+plan_q33_p04.json,33,1040.52001953125,0.4059850573539734,"['Sort', 'Hash Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",4,1040.114,0.9996098
+plan_q33_p05.json,33,1436.550048828125,0.45441970229148865,"['Hash Join', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",3,1436.0956,0.9996836
+plan_q33_p06.json,33,3562.4599609375,0.5473010540008545,"['Sort', 'Aggregate', 'Merge Join', 'Merge Join', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan', 'Index Scan']",6,3561.9126,0.99984634
+plan_q33_p07.json,33,1209.530029296875,0.4811914563179016,"['Nested Loop', 'Nested Loop', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan', 'Index Scan', 'Index Scan']",4,1209.0488,0.99960214
+plan_q34_p00.json,34,1251.5400390625,0.458540141582489,"['Sort', 'Aggregate', 'Hash Join', 'Hash Join', 'Seq Scan', 'Index Only Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Bitmap Heap Scan']",5,1251.0815,0.99963367
+plan_q34_p01.json,34,1219.5400390625,0.4524537920951843,"['Merge Join', 'Merge Join', 'Index Only Scan', 'Index Only Scan', 'Merge Join', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",3,1219.0875,0.99962896
+plan_q34_p02.json,34,2823.6298828125,0.4984913170337677,"['Sort', 'Nested Loop', 'Nested Loop', 'Bitmap Heap Scan', 'Nested Loop', 'Index Scan', 'Bitmap Heap Scan', 'Nested Loop', 'Seq Scan', 'Index Only Scan']",4,2823.1313,0.99982345
+plan_q34_p03.json,34,335.6400146484375,0.3497813940048218,"['Hash Aggregate', 'Nested Loop', 'Hash Join', 'Seq Scan', 'Seq Scan', 'Merge Join', 'Seq Scan', 'Nested Loop', 'Seq Scan', 'Seq Scan']",4,335.29022,0.9989578
+plan_q34_p04.json,34,1286.1199951171875,0.4320691227912903,"['Sort', 'Merge Join', 'Nested Loop', 'Hash Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan', 'Index Scan']",4,1285.6879,0.999664
+plan_q34_p05.json,34,1120.9599609375,0.47211939096450806,"['Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Hash Join', 'Index Scan', 'Index Scan']",4,1120.4878,0.9995788
+plan_q34_p06.json,34,1083.9300537109375,0.4216803014278412,"['Sort', 'Hash Aggregate', 'Merge Join', 'Index Scan', 'Merge Join', 'Merge Join', 'Index Scan', 'Index Scan', 'Merge Join', 'Index Scan', 'Index Scan']",5,1083.5084,0.999611
+plan_q34_p07.json,34,1423.8399658203125,0.3999633491039276,"['Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Nested Loop', 'Index Scan', 'Index Scan']",4,1423.4401,0.99971914
