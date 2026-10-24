@@ -1,0 +1,46 @@
+{
+  "query_id": 2,
+  "hint_id": 2,
+  "tables": [
+    "orders",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 5595.69,
+    "Total Cost": 5924.85,
+    "Plan Rows": 5693.0,
+    "Plan Width": 101,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.0,
+        "Total Cost": 5485.97,
+        "Plan Rows": 5693.0,
+        "Plan Width": 101,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.0,
+            "Total Cost": 260.01,
+            "Plan Rows": 25001.0,
+            "Plan Width": 47
+          },
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "customer",
+            "Startup Cost": 0.0,
+            "Total Cost": 209.03,
+            "Plan Rows": 19903.0,
+            "Plan Width": 54
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1521.5,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

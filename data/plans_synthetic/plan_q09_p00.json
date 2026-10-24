@@ -1,0 +1,91 @@
+{
+  "query_id": 9,
+  "hint_id": 0,
+  "tables": [
+    "customer",
+    "region",
+    "orders",
+    "nation"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 4571.76,
+    "Total Cost": 4840.69,
+    "Plan Rows": 1.0,
+    "Plan Width": 218,
+    "Plans": [
+      {
+        "Node Type": "Hash Aggregate",
+        "Startup Cost": 4092.38,
+        "Total Cost": 4482.12,
+        "Plan Rows": 1.0,
+        "Plan Width": 218,
+        "Plans": [
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 10.75,
+            "Total Cost": 3897.5,
+            "Plan Rows": 1.0,
+            "Plan Width": 218,
+            "Plans": [
+              {
+                "Node Type": "Hash Join",
+                "Startup Cost": 3372.92,
+                "Total Cost": 3886.49,
+                "Plan Rows": 1.0,
+                "Plan Width": 168,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "customer",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 261.78,
+                    "Plan Rows": 25178.0,
+                    "Plan Width": 25
+                  },
+                  {
+                    "Node Type": "Hash Join",
+                    "Startup Cost": 2520.73,
+                    "Total Cost": 3372.9,
+                    "Plan Rows": 1.0,
+                    "Plan Width": 143,
+                    "Plans": [
+                      {
+                        "Node Type": "Bitmap Heap Scan",
+                        "Relation Name": "region",
+                        "Startup Cost": 4.5,
+                        "Total Cost": 15.25,
+                        "Plan Rows": 1.0,
+                        "Plan Width": 108
+                      },
+                      {
+                        "Node Type": "Seq Scan",
+                        "Relation Name": "orders",
+                        "Startup Cost": 0.0,
+                        "Total Cost": 846.91,
+                        "Plan Rows": 83691.0,
+                        "Plan Width": 35
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Node Type": "Seq Scan",
+                "Relation Name": "nation",
+                "Startup Cost": 0.0,
+                "Total Cost": 10.25,
+                "Plan Rows": 25.0,
+                "Plan Width": 50
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1136.48,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

@@ -1,0 +1,457 @@
+{
+  "query_id": "t8_i0",
+  "template_id": 8,
+  "template_name": "National Market Share",
+  "plan_id": 6,
+  "hint_name": "seq_merge",
+  "is_default_plan": false,
+  "execution_time": 114.546,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 4000.0,
+  "plan": {
+    "Node Type": "Aggregate",
+    "Strategy": "Sorted",
+    "Partial Mode": "Simple",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 43090.1,
+    "Total Cost": 43095.5,
+    "Plan Rows": 127,
+    "Plan Width": 64,
+    "Group Key": [
+      "(EXTRACT(year FROM orders.o_orderdate))"
+    ],
+    "Plans": [
+      {
+        "Node Type": "Sort",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 43090.1,
+        "Total Cost": 43090.42,
+        "Plan Rows": 127,
+        "Plan Width": 70,
+        "Sort Key": [
+          "(EXTRACT(year FROM orders.o_orderdate))"
+        ],
+        "Plans": [
+          {
+            "Node Type": "Merge Join",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Join Type": "Inner",
+            "Startup Cost": 43083.32,
+            "Total Cost": 43085.66,
+            "Plan Rows": 127,
+            "Plan Width": 70,
+            "Inner Unique": true,
+            "Merge Cond": "(supplier.s_nationkey = n2.n_nationkey)",
+            "Plans": [
+              {
+                "Node Type": "Sort",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 43081.49,
+                "Total Cost": 43081.8,
+                "Plan Rows": 127,
+                "Plan Width": 20,
+                "Sort Key": [
+                  "supplier.s_nationkey"
+                ],
+                "Plans": [
+                  {
+                    "Node Type": "Merge Join",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Join Type": "Inner",
+                    "Startup Cost": 43072.64,
+                    "Total Cost": 43077.05,
+                    "Plan Rows": 127,
+                    "Plan Width": 20,
+                    "Inner Unique": true,
+                    "Merge Cond": "(lineitem.l_suppkey = supplier.s_suppkey)",
+                    "Plans": [
+                      {
+                        "Node Type": "Sort",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Startup Cost": 43023.23,
+                        "Total Cost": 43023.55,
+                        "Plan Rows": 127,
+                        "Plan Width": 20,
+                        "Sort Key": [
+                          "lineitem.l_suppkey"
+                        ],
+                        "Plans": [
+                          {
+                            "Node Type": "Merge Join",
+                            "Parent Relationship": "Outer",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Join Type": "Inner",
+                            "Startup Cost": 43014.31,
+                            "Total Cost": 43018.79,
+                            "Plan Rows": 127,
+                            "Plan Width": 20,
+                            "Inner Unique": false,
+                            "Merge Cond": "(n1.n_nationkey = customer.c_nationkey)",
+                            "Plans": [
+                              {
+                                "Node Type": "Sort",
+                                "Parent Relationship": "Outer",
+                                "Parallel Aware": false,
+                                "Async Capable": false,
+                                "Startup Cost": 3.14,
+                                "Total Cost": 3.16,
+                                "Plan Rows": 5,
+                                "Plan Width": 4,
+                                "Sort Key": [
+                                  "n1.n_nationkey"
+                                ],
+                                "Plans": [
+                                  {
+                                    "Node Type": "Merge Join",
+                                    "Parent Relationship": "Outer",
+                                    "Parallel Aware": false,
+                                    "Async Capable": false,
+                                    "Join Type": "Inner",
+                                    "Startup Cost": 2.9,
+                                    "Total Cost": 3.09,
+                                    "Plan Rows": 5,
+                                    "Plan Width": 4,
+                                    "Inner Unique": true,
+                                    "Merge Cond": "(n1.n_regionkey = region.r_regionkey)",
+                                    "Plans": [
+                                      {
+                                        "Node Type": "Sort",
+                                        "Parent Relationship": "Outer",
+                                        "Parallel Aware": false,
+                                        "Async Capable": false,
+                                        "Startup Cost": 1.83,
+                                        "Total Cost": 1.89,
+                                        "Plan Rows": 25,
+                                        "Plan Width": 8,
+                                        "Sort Key": [
+                                          "n1.n_regionkey"
+                                        ],
+                                        "Plans": [
+                                          {
+                                            "Node Type": "Seq Scan",
+                                            "Parent Relationship": "Outer",
+                                            "Parallel Aware": false,
+                                            "Async Capable": false,
+                                            "Relation Name": "nation",
+                                            "Alias": "n1",
+                                            "Startup Cost": 0.0,
+                                            "Total Cost": 1.25,
+                                            "Plan Rows": 25,
+                                            "Plan Width": 8
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "Node Type": "Sort",
+                                        "Parent Relationship": "Inner",
+                                        "Parallel Aware": false,
+                                        "Async Capable": false,
+                                        "Startup Cost": 1.07,
+                                        "Total Cost": 1.08,
+                                        "Plan Rows": 1,
+                                        "Plan Width": 4,
+                                        "Sort Key": [
+                                          "region.r_regionkey"
+                                        ],
+                                        "Plans": [
+                                          {
+                                            "Node Type": "Seq Scan",
+                                            "Parent Relationship": "Outer",
+                                            "Parallel Aware": false,
+                                            "Async Capable": false,
+                                            "Relation Name": "region",
+                                            "Alias": "region",
+                                            "Startup Cost": 0.0,
+                                            "Total Cost": 1.06,
+                                            "Plan Rows": 1,
+                                            "Plan Width": 4,
+                                            "Filter": "(r_name = 'AMERICA'::bpchar)"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "Node Type": "Sort",
+                                "Parent Relationship": "Inner",
+                                "Parallel Aware": false,
+                                "Async Capable": false,
+                                "Startup Cost": 43011.17,
+                                "Total Cost": 43012.76,
+                                "Plan Rows": 637,
+                                "Plan Width": 24,
+                                "Sort Key": [
+                                  "customer.c_nationkey"
+                                ],
+                                "Plans": [
+                                  {
+                                    "Node Type": "Merge Join",
+                                    "Parent Relationship": "Outer",
+                                    "Parallel Aware": false,
+                                    "Async Capable": false,
+                                    "Join Type": "Inner",
+                                    "Startup Cost": 42934.45,
+                                    "Total Cost": 42981.5,
+                                    "Plan Rows": 637,
+                                    "Plan Width": 24,
+                                    "Inner Unique": true,
+                                    "Merge Cond": "(orders.o_custkey = customer.c_custkey)",
+                                    "Plans": [
+                                      {
+                                        "Node Type": "Sort",
+                                        "Parent Relationship": "Outer",
+                                        "Parallel Aware": false,
+                                        "Async Capable": false,
+                                        "Startup Cost": 42195.72,
+                                        "Total Cost": 42197.32,
+                                        "Plan Rows": 637,
+                                        "Plan Width": 24,
+                                        "Sort Key": [
+                                          "orders.o_custkey"
+                                        ],
+                                        "Plans": [
+                                          {
+                                            "Node Type": "Merge Join",
+                                            "Parent Relationship": "Outer",
+                                            "Parallel Aware": false,
+                                            "Async Capable": false,
+                                            "Join Type": "Inner",
+                                            "Startup Cost": 42035.44,
+                                            "Total Cost": 42166.05,
+                                            "Plan Rows": 637,
+                                            "Plan Width": 24,
+                                            "Inner Unique": true,
+                                            "Merge Cond": "(lineitem.l_orderkey = orders.o_orderkey)",
+                                            "Plans": [
+                                              {
+                                                "Node Type": "Sort",
+                                                "Parent Relationship": "Outer",
+                                                "Parallel Aware": false,
+                                                "Async Capable": false,
+                                                "Startup Cost": 37896.15,
+                                                "Total Cost": 37901.4,
+                                                "Plan Rows": 2099,
+                                                "Plan Width": 20,
+                                                "Sort Key": [
+                                                  "lineitem.l_orderkey"
+                                                ],
+                                                "Plans": [
+                                                  {
+                                                    "Node Type": "Merge Join",
+                                                    "Parent Relationship": "Outer",
+                                                    "Parallel Aware": false,
+                                                    "Async Capable": false,
+                                                    "Join Type": "Inner",
+                                                    "Startup Cost": 36259.93,
+                                                    "Total Cost": 37780.34,
+                                                    "Plan Rows": 2099,
+                                                    "Plan Width": 20,
+                                                    "Inner Unique": false,
+                                                    "Merge Cond": "(part.p_partkey = lineitem.l_partkey)",
+                                                    "Plans": [
+                                                      {
+                                                        "Node Type": "Sort",
+                                                        "Parent Relationship": "Outer",
+                                                        "Parallel Aware": false,
+                                                        "Async Capable": false,
+                                                        "Startup Cost": 332.15,
+                                                        "Total Cost": 332.32,
+                                                        "Plan Rows": 70,
+                                                        "Plan Width": 4,
+                                                        "Sort Key": [
+                                                          "part.p_partkey"
+                                                        ],
+                                                        "Plans": [
+                                                          {
+                                                            "Node Type": "Seq Scan",
+                                                            "Parent Relationship": "Outer",
+                                                            "Parallel Aware": false,
+                                                            "Async Capable": false,
+                                                            "Relation Name": "part",
+                                                            "Alias": "part",
+                                                            "Startup Cost": 0.0,
+                                                            "Total Cost": 330.0,
+                                                            "Plan Rows": 70,
+                                                            "Plan Width": 4,
+                                                            "Filter": "((p_type)::text = 'ECONOMY ANODIZED STEEL'::text)"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "Node Type": "Sort",
+                                                        "Parent Relationship": "Inner",
+                                                        "Parallel Aware": false,
+                                                        "Async Capable": false,
+                                                        "Startup Cost": 35927.78,
+                                                        "Total Cost": 36677.32,
+                                                        "Plan Rows": 299814,
+                                                        "Plan Width": 24,
+                                                        "Sort Key": [
+                                                          "lineitem.l_partkey"
+                                                        ],
+                                                        "Plans": [
+                                                          {
+                                                            "Node Type": "Seq Scan",
+                                                            "Parent Relationship": "Outer",
+                                                            "Parallel Aware": false,
+                                                            "Async Capable": false,
+                                                            "Relation Name": "lineitem",
+                                                            "Alias": "lineitem",
+                                                            "Startup Cost": 0.0,
+                                                            "Total Cost": 8654.14,
+                                                            "Plan Rows": 299814,
+                                                            "Plan Width": 24
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "Node Type": "Sort",
+                                                "Parent Relationship": "Inner",
+                                                "Parallel Aware": false,
+                                                "Async Capable": false,
+                                                "Startup Cost": 4139.29,
+                                                "Total Cost": 4196.16,
+                                                "Plan Rows": 22749,
+                                                "Plan Width": 12,
+                                                "Sort Key": [
+                                                  "orders.o_orderkey"
+                                                ],
+                                                "Plans": [
+                                                  {
+                                                    "Node Type": "Seq Scan",
+                                                    "Parent Relationship": "Outer",
+                                                    "Parallel Aware": false,
+                                                    "Async Capable": false,
+                                                    "Relation Name": "orders",
+                                                    "Alias": "orders",
+                                                    "Startup Cost": 0.0,
+                                                    "Total Cost": 2493.0,
+                                                    "Plan Rows": 22749,
+                                                    "Plan Width": 12,
+                                                    "Filter": "((o_orderdate >= '1995-01-01'::date) AND (o_orderdate <= '1996-12-31'::date))"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "Node Type": "Sort",
+                                        "Parent Relationship": "Inner",
+                                        "Parallel Aware": false,
+                                        "Async Capable": false,
+                                        "Startup Cost": 738.73,
+                                        "Total Cost": 757.48,
+                                        "Plan Rows": 7500,
+                                        "Plan Width": 8,
+                                        "Sort Key": [
+                                          "customer.c_custkey"
+                                        ],
+                                        "Plans": [
+                                          {
+                                            "Node Type": "Seq Scan",
+                                            "Parent Relationship": "Outer",
+                                            "Parallel Aware": false,
+                                            "Async Capable": false,
+                                            "Relation Name": "customer",
+                                            "Alias": "customer",
+                                            "Startup Cost": 0.0,
+                                            "Total Cost": 256.0,
+                                            "Plan Rows": 7500,
+                                            "Plan Width": 8
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "Node Type": "Sort",
+                        "Parent Relationship": "Inner",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Startup Cost": 49.41,
+                        "Total Cost": 50.66,
+                        "Plan Rows": 500,
+                        "Plan Width": 8,
+                        "Sort Key": [
+                          "supplier.s_suppkey"
+                        ],
+                        "Plans": [
+                          {
+                            "Node Type": "Seq Scan",
+                            "Parent Relationship": "Outer",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Relation Name": "supplier",
+                            "Alias": "supplier",
+                            "Startup Cost": 0.0,
+                            "Total Cost": 27.0,
+                            "Plan Rows": 500,
+                            "Plan Width": 8
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Node Type": "Sort",
+                "Parent Relationship": "Inner",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 1.83,
+                "Total Cost": 1.89,
+                "Plan Rows": 25,
+                "Plan Width": 30,
+                "Sort Key": [
+                  "n2.n_nationkey"
+                ],
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "nation",
+                    "Alias": "n2",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1.25,
+                    "Plan Rows": 25,
+                    "Plan Width": 30
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

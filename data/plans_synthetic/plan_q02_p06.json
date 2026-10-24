@@ -1,0 +1,55 @@
+{
+  "query_id": 2,
+  "hint_id": 6,
+  "tables": [
+    "orders",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 3302.49,
+    "Total Cost": 3496.76,
+    "Plan Rows": 15.0,
+    "Plan Width": 213,
+    "Plans": [
+      {
+        "Node Type": "Hash Aggregate",
+        "Startup Cost": 2956.2,
+        "Total Cost": 3237.74,
+        "Plan Rows": 15.0,
+        "Plan Width": 213,
+        "Plans": [
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 2777.6,
+            "Total Cost": 2815.43,
+            "Plan Rows": 147.0,
+            "Plan Width": 213,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "orders",
+                "Startup Cost": 0.42,
+                "Total Cost": 1765.87,
+                "Plan Rows": 5022.0,
+                "Plan Width": 113
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "customer",
+                "Startup Cost": 0.42,
+                "Total Cost": 898.24,
+                "Plan Rows": 2544.0,
+                "Plan Width": 100
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 854.89,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

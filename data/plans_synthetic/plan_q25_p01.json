@@ -1,0 +1,55 @@
+{
+  "query_id": 25,
+  "hint_id": 1,
+  "tables": [
+    "part",
+    "region",
+    "orders"
+  ],
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 2418.1,
+    "Total Cost": 2427.98,
+    "Plan Rows": 1.0,
+    "Plan Width": 229,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "part",
+        "Startup Cost": 0.42,
+        "Total Cost": 699.39,
+        "Plan Rows": 1975.0,
+        "Plan Width": 33
+      },
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 1666.42,
+        "Total Cost": 1689.07,
+        "Plan Rows": 1.0,
+        "Plan Width": 196,
+        "Plans": [
+          {
+            "Node Type": "Index Only Scan",
+            "Relation Name": "region",
+            "Startup Cost": 0.42,
+            "Total Cost": 5.2,
+            "Plan Rows": 1.0,
+            "Plan Width": 76
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.42,
+            "Total Cost": 1593.27,
+            "Plan Rows": 4529.0,
+            "Plan Width": 120
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 588.84,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

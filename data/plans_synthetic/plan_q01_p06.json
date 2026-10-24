@@ -1,0 +1,109 @@
+{
+  "query_id": 1,
+  "hint_id": 6,
+  "tables": [
+    "supplier",
+    "part",
+    "nation",
+    "region",
+    "lineitem"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 19525.54,
+    "Total Cost": 20674.11,
+    "Plan Rows": 1.0,
+    "Plan Width": 426,
+    "Plans": [
+      {
+        "Node Type": "Aggregate",
+        "Startup Cost": 17478.11,
+        "Total Cost": 19142.69,
+        "Plan Rows": 1.0,
+        "Plan Width": 426,
+        "Plans": [
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 16645.08,
+            "Total Cost": 16645.82,
+            "Plan Rows": 1.0,
+            "Plan Width": 426,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "supplier",
+                "Startup Cost": 0.42,
+                "Total Cost": 59.19,
+                "Plan Rows": 146.0,
+                "Plan Width": 128
+              },
+              {
+                "Node Type": "Merge Join",
+                "Startup Cost": 16583.68,
+                "Total Cost": 16583.69,
+                "Plan Rows": 1.0,
+                "Plan Width": 298,
+                "Plans": [
+                  {
+                    "Node Type": "Merge Join",
+                    "Startup Cost": 745.44,
+                    "Total Cost": 755.43,
+                    "Plan Rows": 1.0,
+                    "Plan Width": 76,
+                    "Plans": [
+                      {
+                        "Node Type": "Index Scan",
+                        "Relation Name": "part",
+                        "Startup Cost": 0.42,
+                        "Total Cost": 707.12,
+                        "Plan Rows": 1997.0,
+                        "Plan Width": 44
+                      },
+                      {
+                        "Node Type": "Index Scan",
+                        "Relation Name": "nation",
+                        "Startup Cost": 0.42,
+                        "Total Cost": 8.35,
+                        "Plan Rows": 1.0,
+                        "Plan Width": 32
+                      }
+                    ]
+                  },
+                  {
+                    "Node Type": "Merge Join",
+                    "Startup Cost": 15614.54,
+                    "Total Cost": 15828.22,
+                    "Plan Rows": 1.0,
+                    "Plan Width": 222,
+                    "Plans": [
+                      {
+                        "Node Type": "Index Scan",
+                        "Relation Name": "region",
+                        "Startup Cost": 0.42,
+                        "Total Cost": 8.35,
+                        "Plan Rows": 1.0,
+                        "Plan Width": 115
+                      },
+                      {
+                        "Node Type": "Index Scan",
+                        "Relation Name": "lineitem",
+                        "Startup Cost": 0.42,
+                        "Total Cost": 14965.15,
+                        "Plan Rows": 42735.0,
+                        "Plan Width": 107
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 5393.86,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

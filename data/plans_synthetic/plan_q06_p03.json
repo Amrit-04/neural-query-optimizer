@@ -1,0 +1,46 @@
+{
+  "query_id": 6,
+  "hint_id": 3,
+  "tables": [
+    "region",
+    "partsupp"
+  ],
+  "plan": {
+    "Node Type": "Aggregate",
+    "Startup Cost": 12.68,
+    "Total Cost": 13.89,
+    "Plan Rows": 1.0,
+    "Plan Width": 139,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.0,
+        "Total Cost": 12.08,
+        "Plan Rows": 2.0,
+        "Plan Width": 139,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "region",
+            "Startup Cost": 0.0,
+            "Total Cost": 10.05,
+            "Plan Rows": 5.0,
+            "Plan Width": 106
+          },
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "partsupp",
+            "Startup Cost": 0.0,
+            "Total Cost": 406.05,
+            "Plan Rows": 39605.0,
+            "Plan Width": 33
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 3.6,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

@@ -1,0 +1,64 @@
+{
+  "query_id": 4,
+  "hint_id": 3,
+  "tables": [
+    "part",
+    "lineitem",
+    "orders"
+  ],
+  "plan": {
+    "Node Type": "Hash Aggregate",
+    "Startup Cost": 60949.01,
+    "Total Cost": 66753.68,
+    "Plan Rows": 2477.0,
+    "Plan Width": 316,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.0,
+        "Total Cost": 58046.68,
+        "Plan Rows": 24766.0,
+        "Plan Width": 316,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "part",
+            "Startup Cost": 0.0,
+            "Total Cost": 53.59,
+            "Plan Rows": 4359.0,
+            "Plan Width": 122
+          },
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 3507.19,
+            "Total Cost": 13304.22,
+            "Plan Rows": 475941.0,
+            "Plan Width": 194,
+            "Plans": [
+              {
+                "Node Type": "Seq Scan",
+                "Relation Name": "lineitem",
+                "Startup Cost": 0.0,
+                "Total Cost": 4320.65,
+                "Plan Rows": 431065.0,
+                "Plan Width": 72
+              },
+              {
+                "Node Type": "Seq Scan",
+                "Relation Name": "orders",
+                "Startup Cost": 0.0,
+                "Total Cost": 1175.73,
+                "Plan Rows": 116573.0,
+                "Plan Width": 122
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 6000.0,
+  "timed_out": true,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

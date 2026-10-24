@@ -1,0 +1,91 @@
+{
+  "query_id": 10,
+  "hint_id": 5,
+  "tables": [
+    "customer",
+    "lineitem",
+    "nation",
+    "region",
+    "orders"
+  ],
+  "plan": {
+    "Node Type": "Hash Join",
+    "Startup Cost": 12923.14,
+    "Total Cost": 13042.39,
+    "Plan Rows": 1.0,
+    "Plan Width": 444,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "customer",
+        "Startup Cost": 0.42,
+        "Total Cost": 116.15,
+        "Plan Rows": 309.0,
+        "Plan Width": 41
+      },
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 2743.27,
+        "Total Cost": 12923.12,
+        "Plan Rows": 1.0,
+        "Plan Width": 403,
+        "Plans": [
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 8.37,
+            "Total Cost": 10179.83,
+            "Plan Rows": 1.0,
+            "Plan Width": 212,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "lineitem",
+                "Startup Cost": 0.42,
+                "Total Cost": 9889.13,
+                "Plan Rows": 28232.0,
+                "Plan Width": 96
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "nation",
+                "Startup Cost": 0.42,
+                "Total Cost": 8.35,
+                "Plan Rows": 1.0,
+                "Plan Width": 116
+              }
+            ]
+          },
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 2663.13,
+            "Total Cost": 2743.25,
+            "Plan Rows": 1.0,
+            "Plan Width": 191,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "region",
+                "Startup Cost": 0.42,
+                "Total Cost": 8.35,
+                "Plan Rows": 1.0,
+                "Plan Width": 63
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "orders",
+                "Startup Cost": 0.42,
+                "Total Cost": 2519.61,
+                "Plan Rows": 7176.0,
+                "Plan Width": 128
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 3306.86,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

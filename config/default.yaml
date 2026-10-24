@@ -8,16 +8,9 @@ deterministic: true
 # Data extraction
 data:
   tpc_h_scale: 1              # TPC-H scale factor (1-5 for diversity)
-  output_dir: data/plans
-  num_queries: 100            # Queries per TPC-H template
+  output_dir: data/plans_synthetic
+  num_queries: 35             # Queries per TPC-H template
   force_alternative_plans: true
-  planner_hints:
-    - enable_hashjoin: false
-    - enable_mergejoin: false
-    - enable_hashjoin: true
-    - enable_mergejoin: false
-    - enable_hashjoin: false
-    - enable_mergejoin: true
 
 # Graph representation
 graph:
@@ -27,23 +20,23 @@ graph:
 
 # Model architecture (Phase 1/2)
 model:
-  type: gat                    # gcn | gat
+  type: gat                    # gcn | gat | sage
   hidden_dim: 64
   num_layers: 2
   dropout: 0.1
   pooling: attention           # mean | add | attention
-  multi_task: false            # Add cardinality prediction head
+  multi_task: false
   predict_cardinality: false
 
 # Training (Phase 1: regression, Phase 2: ranking)
 training:
-  mode: regression             # regression | ranking (needs query_id in plans)
+  mode: ranking                # regression | ranking (needs query_id in plans)
   batch_size: 32
-  epochs: 100
+  epochs: 40
   lr: 0.001
   weight_decay: 1.0e-5
   patience: 15                 # Early stopping
-  log_interval: 10
+  log_interval: 5
   ranking_margin: 0.1          # Margin for pairwise ranking loss
   ranking_weight: 0.5          # Weight of ranking loss when combined
   cardinality_weight: 0.3      # Weight of cardinality loss in multi-task
@@ -51,8 +44,10 @@ training:
 # Evaluation
 evaluation:
   metrics:
+    - spearman_per_query
+    - kendall_per_query
+    - top1_accuracy
+    - regret
     - mae
     - rmse
     - r2
-    - spearman
-    - kendall

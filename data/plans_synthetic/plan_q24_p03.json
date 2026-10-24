@@ -1,0 +1,46 @@
+{
+  "query_id": 24,
+  "hint_id": 3,
+  "tables": [
+    "orders",
+    "lineitem"
+  ],
+  "plan": {
+    "Node Type": "Aggregate",
+    "Startup Cost": 16481.14,
+    "Total Cost": 18050.77,
+    "Plan Rows": 25792.0,
+    "Plan Width": 169,
+    "Plans": [
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 10850.59,
+        "Total Cost": 15696.32,
+        "Plan Rows": 257917.0,
+        "Plan Width": 169,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.0,
+            "Total Cost": 621.1,
+            "Plan Rows": 61110.0,
+            "Plan Width": 90
+          },
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "lineitem",
+            "Startup Cost": 0.0,
+            "Total Cost": 3623.53,
+            "Plan Rows": 361353.0,
+            "Plan Width": 79
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 4539.84,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

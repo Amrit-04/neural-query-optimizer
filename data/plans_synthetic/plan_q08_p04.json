@@ -1,0 +1,82 @@
+{
+  "query_id": 8,
+  "hint_id": 4,
+  "tables": [
+    "lineitem",
+    "part",
+    "region",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 14993.57,
+    "Total Cost": 15875.55,
+    "Plan Rows": 1.0,
+    "Plan Width": 220,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 14698.3,
+        "Total Cost": 14699.58,
+        "Plan Rows": 1.0,
+        "Plan Width": 220,
+        "Plans": [
+          {
+            "Node Type": "Nested Loop",
+            "Startup Cost": 0.42,
+            "Total Cost": 14247.41,
+            "Plan Rows": 255.0,
+            "Plan Width": 56,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "lineitem",
+                "Startup Cost": 0.42,
+                "Total Cost": 6292.27,
+                "Plan Rows": 17955.0,
+                "Plan Width": 24
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "part",
+                "Startup Cost": 0.42,
+                "Total Cost": 443.06,
+                "Plan Rows": 1243.0,
+                "Plan Width": 32
+              }
+            ]
+          },
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 441.23,
+            "Total Cost": 447.05,
+            "Plan Rows": 1.0,
+            "Plan Width": 164,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "region",
+                "Startup Cost": 0.42,
+                "Total Cost": 8.35,
+                "Plan Rows": 1.0,
+                "Plan Width": 36
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "customer",
+                "Startup Cost": 0.42,
+                "Total Cost": 415.4,
+                "Plan Rows": 1164.0,
+                "Plan Width": 128
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 3887.51,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

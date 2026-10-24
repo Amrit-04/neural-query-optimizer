@@ -1,0 +1,37 @@
+{
+  "query_id": 21,
+  "hint_id": 7,
+  "tables": [
+    "lineitem",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Nested Loop",
+    "Startup Cost": 0.42,
+    "Total Cost": 2781.97,
+    "Plan Rows": 46.0,
+    "Plan Width": 184,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "lineitem",
+        "Startup Cost": 0.42,
+        "Total Cost": 1277.91,
+        "Plan Rows": 3628.0,
+        "Plan Width": 110
+      },
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "customer",
+        "Startup Cost": 0.42,
+        "Total Cost": 414.57,
+        "Plan Rows": 1162.0,
+        "Plan Width": 74
+      }
+    ]
+  },
+  "execution_time": 690.01,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

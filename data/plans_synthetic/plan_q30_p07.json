@@ -1,0 +1,55 @@
+{
+  "query_id": 30,
+  "hint_id": 7,
+  "tables": [
+    "nation",
+    "supplier",
+    "lineitem"
+  ],
+  "plan": {
+    "Node Type": "Nested Loop",
+    "Startup Cost": 0.42,
+    "Total Cost": 43.7,
+    "Plan Rows": 1.0,
+    "Plan Width": 224,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "nation",
+        "Startup Cost": 0.42,
+        "Total Cost": 9.59,
+        "Plan Rows": 5.0,
+        "Plan Width": 59
+      },
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.42,
+        "Total Cost": 6821.49,
+        "Plan Rows": 162.0,
+        "Plan Width": 165,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "supplier",
+            "Startup Cost": 0.42,
+            "Total Cost": 205.03,
+            "Plan Rows": 563.0,
+            "Plan Width": 71
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "lineitem",
+            "Startup Cost": 0.42,
+            "Total Cost": 11752.15,
+            "Plan Rows": 33555.0,
+            "Plan Width": 94
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 11.49,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

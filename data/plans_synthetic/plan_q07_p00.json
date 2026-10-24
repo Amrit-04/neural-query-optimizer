@@ -1,0 +1,73 @@
+{
+  "query_id": 7,
+  "hint_id": 0,
+  "tables": [
+    "supplier",
+    "orders",
+    "part"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 1323.56,
+    "Total Cost": 1401.42,
+    "Plan Rows": 1.0,
+    "Plan Width": 178,
+    "Plans": [
+      {
+        "Node Type": "Aggregate",
+        "Startup Cost": 1184.78,
+        "Total Cost": 1297.61,
+        "Plan Rows": 1.0,
+        "Plan Width": 178,
+        "Plans": [
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 938.48,
+            "Total Cost": 1128.36,
+            "Plan Rows": 1.0,
+            "Plan Width": 178,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "supplier",
+                "Startup Cost": 0.42,
+                "Total Cost": 183.18,
+                "Plan Rows": 501.0,
+                "Plan Width": 37
+              },
+              {
+                "Node Type": "Hash Join",
+                "Startup Cost": 524.98,
+                "Total Cost": 935.1,
+                "Plan Rows": 169.0,
+                "Plan Width": 141,
+                "Plans": [
+                  {
+                    "Node Type": "Index Only Scan",
+                    "Relation Name": "orders",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 227.34,
+                    "Plan Rows": 1112.0,
+                    "Plan Width": 124
+                  },
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "part",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 181.66,
+                    "Plan Rows": 17166.0,
+                    "Plan Width": 17
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 356.96,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

@@ -1,0 +1,37 @@
+{
+  "query_id": 0,
+  "hint_id": 5,
+  "tables": [
+    "lineitem",
+    "supplier"
+  ],
+  "plan": {
+    "Node Type": "Hash Join",
+    "Startup Cost": 86.85,
+    "Total Cost": 4669.12,
+    "Plan Rows": 30.0,
+    "Plan Width": 235,
+    "Plans": [
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "lineitem",
+        "Startup Cost": 0.42,
+        "Total Cost": 4453.14,
+        "Plan Rows": 12700.0,
+        "Plan Width": 113
+      },
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "supplier",
+        "Startup Cost": 0.42,
+        "Total Cost": 82.59,
+        "Plan Rows": 213.0,
+        "Plan Width": 122
+      }
+    ]
+  },
+  "execution_time": 1118.94,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

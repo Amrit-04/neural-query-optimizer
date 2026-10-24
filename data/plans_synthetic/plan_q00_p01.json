@@ -1,0 +1,37 @@
+{
+  "query_id": 0,
+  "hint_id": 1,
+  "tables": [
+    "lineitem",
+    "supplier"
+  ],
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 634.29,
+    "Total Cost": 664.92,
+    "Plan Rows": 100.0,
+    "Plan Width": 109,
+    "Plans": [
+      {
+        "Node Type": "Index Only Scan",
+        "Relation Name": "lineitem",
+        "Startup Cost": 0.42,
+        "Total Cost": 495.71,
+        "Plan Rows": 2454.0,
+        "Plan Width": 64
+      },
+      {
+        "Node Type": "Seq Scan",
+        "Relation Name": "supplier",
+        "Startup Cost": 0.0,
+        "Total Cost": 46.71,
+        "Plan Rows": 3671.0,
+        "Plan Width": 45
+      }
+    ]
+  },
+  "execution_time": 176.19,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

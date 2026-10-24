@@ -1,0 +1,46 @@
+{
+  "query_id": 28,
+  "hint_id": 4,
+  "tables": [
+    "customer",
+    "nation"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 681.41,
+    "Total Cost": 721.49,
+    "Plan Rows": 1.0,
+    "Plan Width": 56,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.42,
+        "Total Cost": 668.05,
+        "Plan Rows": 1.0,
+        "Plan Width": 56,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "customer",
+            "Startup Cost": 0.42,
+            "Total Cost": 652.67,
+            "Plan Rows": 1842.0,
+            "Plan Width": 39
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "nation",
+            "Startup Cost": 0.42,
+            "Total Cost": 8.35,
+            "Plan Rows": 1.0,
+            "Plan Width": 17
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 170.43,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

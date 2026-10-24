@@ -1,0 +1,55 @@
+{
+  "query_id": 21,
+  "hint_id": 0,
+  "tables": [
+    "lineitem",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 13252.31,
+    "Total Cost": 14031.86,
+    "Plan Rows": 170.0,
+    "Plan Width": 181,
+    "Plans": [
+      {
+        "Node Type": "Hash Aggregate",
+        "Startup Cost": 11862.68,
+        "Total Cost": 12992.46,
+        "Plan Rows": 170.0,
+        "Plan Width": 181,
+        "Plans": [
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 1335.93,
+            "Total Cost": 11297.79,
+            "Plan Rows": 1699.0,
+            "Plan Width": 181,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Relation Name": "lineitem",
+                "Startup Cost": 4.5,
+                "Total Cost": 9532.25,
+                "Plan Rows": 38069.0,
+                "Plan Width": 59
+              },
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Relation Name": "customer",
+                "Startup Cost": 4.5,
+                "Total Cost": 1238.09,
+                "Plan Rows": 4892.0,
+                "Plan Width": 122
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 3719.89,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

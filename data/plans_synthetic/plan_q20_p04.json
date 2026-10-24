@@ -1,0 +1,64 @@
+{
+  "query_id": 20,
+  "hint_id": 4,
+  "tables": [
+    "orders",
+    "supplier",
+    "partsupp"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 28571.38,
+    "Total Cost": 30252.05,
+    "Plan Rows": 2.0,
+    "Plan Width": 252,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.42,
+        "Total Cost": 28011.16,
+        "Plan Rows": 2.0,
+        "Plan Width": 252,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.42,
+            "Total Cost": 4922.28,
+            "Plan Rows": 14041.0,
+            "Plan Width": 112
+          },
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 1457.29,
+            "Total Cost": 1644.39,
+            "Plan Rows": 17.0,
+            "Plan Width": 140,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "supplier",
+                "Startup Cost": 0.42,
+                "Total Cost": 144.04,
+                "Plan Rows": 389.0,
+                "Plan Width": 20
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "partsupp",
+                "Startup Cost": 0.42,
+                "Total Cost": 1378.95,
+                "Plan Rows": 3917.0,
+                "Plan Width": 120
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 6000.0,
+  "timed_out": true,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

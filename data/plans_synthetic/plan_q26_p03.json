@@ -1,0 +1,46 @@
+{
+  "query_id": 26,
+  "hint_id": 3,
+  "tables": [
+    "supplier",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Hash Aggregate",
+    "Startup Cost": 992.04,
+    "Total Cost": 1086.52,
+    "Plan Rows": 26.0,
+    "Plan Width": 197,
+    "Plans": [
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 682.21,
+        "Total Cost": 944.8,
+        "Plan Rows": 264.0,
+        "Plan Width": 197,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "supplier",
+            "Startup Cost": 0.0,
+            "Total Cost": 24.26,
+            "Plan Rows": 1426.0,
+            "Plan Width": 101
+          },
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "customer",
+            "Startup Cost": 0.0,
+            "Total Cost": 234.07,
+            "Plan Rows": 22407.0,
+            "Plan Width": 96
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 258.31,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

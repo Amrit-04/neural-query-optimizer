@@ -1,0 +1,100 @@
+{
+  "query_id": 3,
+  "hint_id": 2,
+  "tables": [
+    "partsupp",
+    "region",
+    "supplier",
+    "customer",
+    "part"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 1269.94,
+    "Total Cost": 1344.64,
+    "Plan Rows": 1.0,
+    "Plan Width": 401,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.0,
+        "Total Cost": 1245.04,
+        "Plan Rows": 1.0,
+        "Plan Width": 401,
+        "Plans": [
+          {
+            "Node Type": "Nested Loop",
+            "Startup Cost": 0.0,
+            "Total Cost": 1242.81,
+            "Plan Rows": 1.0,
+            "Plan Width": 258,
+            "Plans": [
+              {
+                "Node Type": "Seq Scan",
+                "Relation Name": "partsupp",
+                "Startup Cost": 0.0,
+                "Total Cost": 497.47,
+                "Plan Rows": 48747.0,
+                "Plan Width": 93
+              },
+              {
+                "Node Type": "Nested Loop",
+                "Startup Cost": 4.5,
+                "Total Cost": 15.29,
+                "Plan Rows": 1.0,
+                "Plan Width": 165,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Heap Scan",
+                    "Relation Name": "region",
+                    "Startup Cost": 4.5,
+                    "Total Cost": 15.25,
+                    "Plan Rows": 1.0,
+                    "Plan Width": 112
+                  },
+                  {
+                    "Node Type": "Index Scan",
+                    "Relation Name": "supplier",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 37.51,
+                    "Plan Rows": 84.0,
+                    "Plan Width": 53
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Node Type": "Nested Loop",
+            "Startup Cost": 0.42,
+            "Total Cost": 2228.06,
+            "Plan Rows": 29.0,
+            "Plan Width": 143,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "customer",
+                "Startup Cost": 0.42,
+                "Total Cost": 1716.67,
+                "Plan Rows": 4882.0,
+                "Plan Width": 77
+              },
+              {
+                "Node Type": "Index Only Scan",
+                "Relation Name": "part",
+                "Startup Cost": 0.42,
+                "Total Cost": 104.75,
+                "Plan Rows": 499.0,
+                "Plan Width": 66
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 328.94,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

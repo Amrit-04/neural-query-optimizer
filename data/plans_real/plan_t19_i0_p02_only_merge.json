@@ -1,0 +1,97 @@
+{
+  "query_id": "t19_i0",
+  "template_id": 19,
+  "template_name": "Discounted Revenue",
+  "plan_id": 2,
+  "hint_name": "only_merge",
+  "is_default_plan": false,
+  "execution_time": 35.9,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 4000.0,
+  "plan": {
+    "Node Type": "Aggregate",
+    "Strategy": "Plain",
+    "Partial Mode": "Simple",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 15665.62,
+    "Total Cost": 15665.63,
+    "Plan Rows": 1,
+    "Plan Width": 32,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Join Type": "Inner",
+        "Startup Cost": 15636.21,
+        "Total Cost": 15665.57,
+        "Plan Rows": 6,
+        "Plan Width": 12,
+        "Inner Unique": true,
+        "Merge Cond": "(lineitem.l_partkey = part.p_partkey)",
+        "Join Filter": "(((part.p_brand = 'Brand#12'::bpchar) AND (part.p_container = ANY ('{\"SM CASE\",\"SM BOX\",\"SM PACK\",\"SM PKG\"}'::bpchar[])) AND (lineitem.l_quantity >= '1'::numeric) AND (lineitem.l_quantity <= '11'::numeric) AND (part.p_size <= 5)) OR ((part.p_brand = 'Brand#23'::bpchar) AND (part.p_container = ANY ('{\"MED BAG\",\"MED BOX\",\"MED PKG\",\"MED PACK\"}'::bpchar[])) AND (lineitem.l_quantity >= '10'::numeric) AND (lineitem.l_quantity <= '20'::numeric) AND (part.p_size <= 10)) OR ((part.p_brand = 'Brand#34'::bpchar) AND (part.p_container = ANY ('{\"LG CASE\",\"LG BOX\",\"LG PACK\",\"LG PKG\"}'::bpchar[])) AND (lineitem.l_quantity >= '20'::numeric) AND (lineitem.l_quantity <= '30'::numeric) AND (part.p_size <= 15)))",
+        "Plans": [
+          {
+            "Node Type": "Sort",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 15005.66,
+            "Total Cost": 15019.9,
+            "Plan Rows": 5695,
+            "Plan Width": 21,
+            "Sort Key": [
+              "lineitem.l_partkey"
+            ],
+            "Plans": [
+              {
+                "Node Type": "Seq Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "lineitem",
+                "Alias": "lineitem",
+                "Startup Cost": 0.0,
+                "Total Cost": 14650.42,
+                "Plan Rows": 5695,
+                "Plan Width": 21,
+                "Filter": "((l_shipmode = ANY ('{AIR,\"AIR REG\"}'::bpchar[])) AND (l_shipinstruct = 'DELIVER IN PERSON'::bpchar) AND (((l_quantity >= '1'::numeric) AND (l_quantity <= '11'::numeric)) OR ((l_quantity >= '10'::numeric) AND (l_quantity <= '20'::numeric)) OR ((l_quantity >= '20'::numeric) AND (l_quantity <= '30'::numeric))))"
+              }
+            ]
+          },
+          {
+            "Node Type": "Sort",
+            "Parent Relationship": "Inner",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 630.55,
+            "Total Cost": 630.61,
+            "Plan Rows": 24,
+            "Plan Width": 30,
+            "Sort Key": [
+              "part.p_partkey"
+            ],
+            "Plans": [
+              {
+                "Node Type": "Seq Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "part",
+                "Alias": "part",
+                "Startup Cost": 0.0,
+                "Total Cost": 630.0,
+                "Plan Rows": 24,
+                "Plan Width": 30,
+                "Filter": "((p_size >= 1) AND (((p_brand = 'Brand#12'::bpchar) AND (p_container = ANY ('{\"SM CASE\",\"SM BOX\",\"SM PACK\",\"SM PKG\"}'::bpchar[])) AND (p_size <= 5)) OR ((p_brand = 'Brand#23'::bpchar) AND (p_container = ANY ('{\"MED BAG\",\"MED BOX\",\"MED PKG\",\"MED PACK\"}'::bpchar[])) AND (p_size <= 10)) OR ((p_brand = 'Brand#34'::bpchar) AND (p_container = ANY ('{\"LG CASE\",\"LG BOX\",\"LG PACK\",\"LG PKG\"}'::bpchar[])) AND (p_size <= 15))))"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

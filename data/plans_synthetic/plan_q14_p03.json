@@ -1,0 +1,100 @@
+{
+  "query_id": 14,
+  "hint_id": 3,
+  "tables": [
+    "orders",
+    "nation",
+    "supplier",
+    "partsupp",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Aggregate",
+    "Startup Cost": 18817.81,
+    "Total Cost": 20609.98,
+    "Plan Rows": 1.0,
+    "Plan Width": 274,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.0,
+        "Total Cost": 17921.72,
+        "Plan Rows": 1.0,
+        "Plan Width": 274,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.0,
+            "Total Cost": 1051.5,
+            "Plan Rows": 104150.0,
+            "Plan Width": 99
+          },
+          {
+            "Node Type": "Nested Loop",
+            "Startup Cost": 136.88,
+            "Total Cost": 161.98,
+            "Plan Rows": 1.0,
+            "Plan Width": 175,
+            "Plans": [
+              {
+                "Node Type": "Merge Join",
+                "Startup Cost": 136.88,
+                "Total Cost": 160.25,
+                "Plan Rows": 1.0,
+                "Plan Width": 117,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "nation",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 10.25,
+                    "Plan Rows": 25.0,
+                    "Plan Width": 39
+                  },
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "supplier",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 56.5,
+                    "Plan Rows": 4650.0,
+                    "Plan Width": 78
+                  }
+                ]
+              },
+              {
+                "Node Type": "Merge Join",
+                "Startup Cost": 1445.67,
+                "Total Cost": 1730.81,
+                "Plan Rows": 9404.0,
+                "Plan Width": 58,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "partsupp",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 307.67,
+                    "Plan Rows": 29767.0,
+                    "Plan Width": 23
+                  },
+                  {
+                    "Node Type": "Seq Scan",
+                    "Relation Name": "customer",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 282.6,
+                    "Plan Rows": 27260.0,
+                    "Plan Width": 35
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 5091.87,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

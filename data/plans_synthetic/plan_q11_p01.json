@@ -1,0 +1,91 @@
+{
+  "query_id": 11,
+  "hint_id": 1,
+  "tables": [
+    "nation",
+    "supplier",
+    "orders",
+    "lineitem",
+    "region"
+  ],
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 8940.34,
+    "Total Cost": 8940.47,
+    "Plan Rows": 1.0,
+    "Plan Width": 370,
+    "Plans": [
+      {
+        "Node Type": "Seq Scan",
+        "Relation Name": "nation",
+        "Startup Cost": 0.0,
+        "Total Cost": 10.25,
+        "Plan Rows": 25.0,
+        "Plan Width": 81
+      },
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 8929.6,
+        "Total Cost": 8929.7,
+        "Plan Rows": 1.0,
+        "Plan Width": 289,
+        "Plans": [
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 8894.95,
+            "Total Cost": 8914.05,
+            "Plan Rows": 18.0,
+            "Plan Width": 258,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "supplier",
+                "Startup Cost": 0.42,
+                "Total Cost": 242.46,
+                "Plan Rows": 670.0,
+                "Plan Width": 92
+              },
+              {
+                "Node Type": "Merge Join",
+                "Startup Cost": 8415.47,
+                "Total Cost": 8595.19,
+                "Plan Rows": 3150.0,
+                "Plan Width": 166,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Heap Scan",
+                    "Relation Name": "orders",
+                    "Startup Cost": 4.5,
+                    "Total Cost": 3351.98,
+                    "Plan Rows": 13348.0,
+                    "Plan Width": 118
+                  },
+                  {
+                    "Node Type": "Index Only Scan",
+                    "Relation Name": "lineitem",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 4524.31,
+                    "Plan Rows": 22597.0,
+                    "Plan Width": 48
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Node Type": "Bitmap Heap Scan",
+            "Relation Name": "region",
+            "Startup Cost": 4.5,
+            "Total Cost": 15.27,
+            "Plan Rows": 1.0,
+            "Plan Width": 31
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 2291.79,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

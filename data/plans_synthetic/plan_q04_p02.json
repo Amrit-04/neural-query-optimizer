@@ -1,0 +1,64 @@
+{
+  "query_id": 4,
+  "hint_id": 2,
+  "tables": [
+    "part",
+    "lineitem",
+    "orders"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 183260.39,
+    "Total Cost": 194040.41,
+    "Plan Rows": 58.0,
+    "Plan Width": 88,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.42,
+        "Total Cost": 179667.05,
+        "Plan Rows": 58.0,
+        "Plan Width": 88,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "part",
+            "Startup Cost": 0.42,
+            "Total Cost": 844.36,
+            "Plan Rows": 2390.0,
+            "Plan Width": 26
+          },
+          {
+            "Node Type": "Nested Loop",
+            "Startup Cost": 0.42,
+            "Total Cost": 74821.21,
+            "Plan Rows": 2136.0,
+            "Plan Width": 62,
+            "Plans": [
+              {
+                "Node Type": "Index Only Scan",
+                "Relation Name": "lineitem",
+                "Startup Cost": 0.42,
+                "Total Cost": 9819.75,
+                "Plan Rows": 49074.0,
+                "Plan Width": 27
+              },
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Relation Name": "orders",
+                "Startup Cost": 4.5,
+                "Total Cost": 1324.56,
+                "Plan Rows": 5238.0,
+                "Plan Width": 35
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 6000.0,
+  "timed_out": true,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

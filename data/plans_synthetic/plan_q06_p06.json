@@ -1,0 +1,55 @@
+{
+  "query_id": 6,
+  "hint_id": 6,
+  "tables": [
+    "region",
+    "partsupp"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 809.13,
+    "Total Cost": 856.72,
+    "Plan Rows": 1.0,
+    "Plan Width": 119,
+    "Plans": [
+      {
+        "Node Type": "Aggregate",
+        "Startup Cost": 724.28,
+        "Total Cost": 793.26,
+        "Plan Rows": 1.0,
+        "Plan Width": 119,
+        "Plans": [
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 680.68,
+            "Total Cost": 689.79,
+            "Plan Rows": 1.0,
+            "Plan Width": 119,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "region",
+                "Startup Cost": 0.42,
+                "Total Cost": 8.35,
+                "Plan Rows": 1.0,
+                "Plan Width": 42
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "partsupp",
+                "Startup Cost": 0.42,
+                "Total Cost": 645.02,
+                "Plan Rows": 1820.0,
+                "Plan Width": 77
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 208.07,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

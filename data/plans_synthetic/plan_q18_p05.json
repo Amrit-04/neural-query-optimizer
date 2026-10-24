@@ -1,0 +1,91 @@
+{
+  "query_id": 18,
+  "hint_id": 5,
+  "tables": [
+    "lineitem",
+    "part",
+    "orders",
+    "supplier",
+    "nation"
+  ],
+  "plan": {
+    "Node Type": "Hash Join",
+    "Startup Cost": 8.75,
+    "Total Cost": 24110.48,
+    "Plan Rows": 1.0,
+    "Plan Width": 396,
+    "Plans": [
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 32.09,
+        "Total Cost": 24101.7,
+        "Plan Rows": 1.0,
+        "Plan Width": 287,
+        "Plans": [
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 5119.5,
+            "Total Cost": 24067.53,
+            "Plan Rows": 143.0,
+            "Plan Width": 263,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "lineitem",
+                "Startup Cost": 0.42,
+                "Total Cost": 18418.81,
+                "Plan Rows": 52602.0,
+                "Plan Width": 87
+              },
+              {
+                "Node Type": "Hash Join",
+                "Startup Cost": 3980.91,
+                "Total Cost": 5113.1,
+                "Plan Rows": 320.0,
+                "Plan Width": 176,
+                "Plans": [
+                  {
+                    "Node Type": "Index Scan",
+                    "Relation Name": "part",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 996.57,
+                    "Plan Rows": 2824.0,
+                    "Plan Width": 54
+                  },
+                  {
+                    "Node Type": "Index Scan",
+                    "Relation Name": "orders",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 3766.15,
+                    "Plan Rows": 10738.0,
+                    "Plan Width": 122
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "supplier",
+            "Startup Cost": 0.42,
+            "Total Cost": 30.79,
+            "Plan Rows": 65.0,
+            "Plan Width": 24
+          }
+        ]
+      },
+      {
+        "Node Type": "Index Scan",
+        "Relation Name": "nation",
+        "Startup Cost": 0.42,
+        "Total Cost": 8.71,
+        "Plan Rows": 2.0,
+        "Plan Width": 109
+      }
+    ]
+  },
+  "execution_time": 5702.47,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

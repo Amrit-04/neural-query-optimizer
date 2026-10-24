@@ -1,0 +1,73 @@
+{
+  "query_id": 31,
+  "hint_id": 1,
+  "tables": [
+    "lineitem",
+    "orders",
+    "part",
+    "nation"
+  ],
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 5016.98,
+    "Total Cost": 5038.37,
+    "Plan Rows": 1.0,
+    "Plan Width": 258,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 3619.3,
+        "Total Cost": 4217.81,
+        "Plan Rows": 4278.0,
+        "Plan Width": 121,
+        "Plans": [
+          {
+            "Node Type": "Index Only Scan",
+            "Relation Name": "lineitem",
+            "Startup Cost": 0.42,
+            "Total Cost": 648.92,
+            "Plan Rows": 3220.0,
+            "Plan Width": 68
+          },
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.0,
+            "Total Cost": 1174.83,
+            "Plan Rows": 116483.0,
+            "Plan Width": 53
+          }
+        ]
+      },
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 725.35,
+        "Total Cost": 734.98,
+        "Plan Rows": 1.0,
+        "Plan Width": 137,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "part",
+            "Startup Cost": 0.42,
+            "Total Cost": 679.91,
+            "Plan Rows": 1920.0,
+            "Plan Width": 68
+          },
+          {
+            "Node Type": "Bitmap Heap Scan",
+            "Relation Name": "nation",
+            "Startup Cost": 4.5,
+            "Total Cost": 16.55,
+            "Plan Rows": 6.0,
+            "Plan Width": 69
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1165.41,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

@@ -1,0 +1,101 @@
+{
+  "query_id": "t4_i1",
+  "template_id": 4,
+  "template_name": "Order Priority Checking",
+  "plan_id": 0,
+  "hint_name": "default",
+  "is_default_plan": true,
+  "execution_time": 4.697,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 4000.0,
+  "plan": {
+    "Node Type": "Sort",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 10684.14,
+    "Total Cost": 10684.15,
+    "Plan Rows": 5,
+    "Plan Width": 24,
+    "Sort Key": [
+      "orders.o_orderpriority"
+    ],
+    "Plans": [
+      {
+        "Node Type": "Aggregate",
+        "Strategy": "Hashed",
+        "Partial Mode": "Simple",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 10684.03,
+        "Total Cost": 10684.08,
+        "Plan Rows": 5,
+        "Plan Width": 24,
+        "Group Key": [
+          "orders.o_orderpriority"
+        ],
+        "Planned Partitions": 0,
+        "Plans": [
+          {
+            "Node Type": "Nested Loop",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Join Type": "Semi",
+            "Startup Cost": 41.41,
+            "Total Cost": 10672.52,
+            "Plan Rows": 2302,
+            "Plan Width": 16,
+            "Inner Unique": false,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "orders",
+                "Alias": "orders",
+                "Startup Cost": 40.99,
+                "Total Cost": 1450.99,
+                "Plan Rows": 2800,
+                "Plan Width": 20,
+                "Recheck Cond": "((o_orderdate >= '1994-01-01'::date) AND (o_orderdate < '1994-04-01 00:00:00'::timestamp without time zone))",
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "idx_orders_orderdate",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 40.29,
+                    "Plan Rows": 2800,
+                    "Plan Width": 0,
+                    "Index Cond": "((o_orderdate >= '1994-01-01'::date) AND (o_orderdate < '1994-04-01 00:00:00'::timestamp without time zone))"
+                  }
+                ]
+              },
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Inner",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "idx_lineitem_orderkey",
+                "Relation Name": "lineitem",
+                "Alias": "lineitem",
+                "Startup Cost": 0.42,
+                "Total Cost": 4.41,
+                "Plan Rows": 2,
+                "Plan Width": 4,
+                "Index Cond": "(l_orderkey = orders.o_orderkey)",
+                "Filter": "(l_commitdate < l_receiptdate)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

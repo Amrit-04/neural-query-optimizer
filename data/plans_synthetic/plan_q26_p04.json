@@ -1,0 +1,46 @@
+{
+  "query_id": 26,
+  "hint_id": 4,
+  "tables": [
+    "supplier",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 787.5,
+    "Total Cost": 833.82,
+    "Plan Rows": 3.0,
+    "Plan Width": 149,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 761.84,
+        "Total Cost": 772.06,
+        "Plan Rows": 3.0,
+        "Plan Width": 149,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "supplier",
+            "Startup Cost": 0.42,
+            "Total Cost": 48.82,
+            "Plan Rows": 117.0,
+            "Plan Width": 108
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "customer",
+            "Startup Cost": 0.42,
+            "Total Cost": 682.36,
+            "Plan Rows": 1927.0,
+            "Plan Width": 41
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 207.83,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

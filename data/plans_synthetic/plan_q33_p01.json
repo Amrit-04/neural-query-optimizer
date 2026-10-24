@@ -1,0 +1,91 @@
+{
+  "query_id": 33,
+  "hint_id": 1,
+  "tables": [
+    "partsupp",
+    "orders",
+    "nation",
+    "supplier",
+    "part"
+  ],
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 2114.76,
+    "Total Cost": 2121.81,
+    "Plan Rows": 1.0,
+    "Plan Width": 383,
+    "Plans": [
+      {
+        "Node Type": "Index Only Scan",
+        "Relation Name": "partsupp",
+        "Startup Cost": 0.42,
+        "Total Cost": 286.9,
+        "Plan Rows": 1409.0,
+        "Plan Width": 128
+      },
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 1792.2,
+        "Total Cost": 1806.71,
+        "Plan Rows": 1.0,
+        "Plan Width": 255,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.42,
+            "Total Cost": 1023.58,
+            "Plan Rows": 2902.0,
+            "Plan Width": 69
+          },
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 724.94,
+            "Total Cost": 725.07,
+            "Plan Rows": 1.0,
+            "Plan Width": 186,
+            "Plans": [
+              {
+                "Node Type": "Seq Scan",
+                "Relation Name": "nation",
+                "Startup Cost": 0.0,
+                "Total Cost": 10.25,
+                "Plan Rows": 25.0,
+                "Plan Width": 60
+              },
+              {
+                "Node Type": "Merge Join",
+                "Startup Cost": 701.63,
+                "Total Cost": 714.3,
+                "Plan Rows": 1.0,
+                "Plan Width": 126,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Heap Scan",
+                    "Relation Name": "supplier",
+                    "Startup Cost": 4.5,
+                    "Total Cost": 30.32,
+                    "Plan Rows": 61.0,
+                    "Plan Width": 93
+                  },
+                  {
+                    "Node Type": "Bitmap Heap Scan",
+                    "Relation Name": "part",
+                    "Startup Cost": 4.5,
+                    "Total Cost": 633.3,
+                    "Plan Rows": 2473.0,
+                    "Plan Width": 33
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 517.88,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

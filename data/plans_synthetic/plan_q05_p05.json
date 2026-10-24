@@ -1,0 +1,91 @@
+{
+  "query_id": 5,
+  "hint_id": 5,
+  "tables": [
+    "orders",
+    "part",
+    "partsupp",
+    "region",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Hash Join",
+    "Startup Cost": 2908.61,
+    "Total Cost": 6872.89,
+    "Plan Rows": 1.0,
+    "Plan Width": 407,
+    "Plans": [
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 312.51,
+        "Total Cost": 3963.51,
+        "Plan Rows": 76.0,
+        "Plan Width": 172,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.42,
+            "Total Cost": 3541.8,
+            "Plan Rows": 10097.0,
+            "Plan Width": 85
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "part",
+            "Startup Cost": 0.42,
+            "Total Cost": 296.05,
+            "Plan Rows": 823.0,
+            "Plan Width": 87
+          }
+        ]
+      },
+      {
+        "Node Type": "Hash Join",
+        "Startup Cost": 436.64,
+        "Total Cost": 2908.59,
+        "Plan Rows": 1.0,
+        "Plan Width": 235,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "partsupp",
+            "Startup Cost": 0.42,
+            "Total Cost": 2403.5,
+            "Plan Rows": 6844.0,
+            "Plan Width": 117
+          },
+          {
+            "Node Type": "Hash Join",
+            "Startup Cost": 417.2,
+            "Total Cost": 436.62,
+            "Plan Rows": 1.0,
+            "Plan Width": 118,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "region",
+                "Startup Cost": 0.42,
+                "Total Cost": 8.35,
+                "Plan Rows": 1.0,
+                "Plan Width": 34
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "customer",
+                "Startup Cost": 0.42,
+                "Total Cost": 395.08,
+                "Plan Rows": 1106.0,
+                "Plan Width": 84
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1646.55,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

@@ -1,0 +1,214 @@
+{
+  "query_id": "t9_i0",
+  "template_id": 9,
+  "template_name": "Product Type Profit Measure",
+  "plan_id": 3,
+  "hint_name": "only_nestloop",
+  "is_default_plan": false,
+  "execution_time": 78.55,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 4000.0,
+  "plan": {
+    "Node Type": "Aggregate",
+    "Strategy": "Sorted",
+    "Partial Mode": "Simple",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 5530.96,
+    "Total Cost": 5535.2,
+    "Plan Rows": 121,
+    "Plan Width": 90,
+    "Group Key": [
+      "nation.n_name",
+      "(EXTRACT(year FROM orders.o_orderdate))"
+    ],
+    "Plans": [
+      {
+        "Node Type": "Sort",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 5530.96,
+        "Total Cost": 5531.27,
+        "Plan Rows": 121,
+        "Plan Width": 81,
+        "Sort Key": [
+          "nation.n_name",
+          "(EXTRACT(year FROM orders.o_orderdate)) DESC"
+        ],
+        "Plans": [
+          {
+            "Node Type": "Nested Loop",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Join Type": "Inner",
+            "Startup Cost": 1.15,
+            "Total Cost": 5526.78,
+            "Plan Rows": 121,
+            "Plan Width": 81,
+            "Inner Unique": true,
+            "Join Filter": "(supplier.s_nationkey = nation.n_nationkey)",
+            "Plans": [
+              {
+                "Node Type": "Nested Loop",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Join Type": "Inner",
+                "Startup Cost": 1.15,
+                "Total Cost": 5481.52,
+                "Plan Rows": 121,
+                "Plan Width": 31,
+                "Inner Unique": true,
+                "Plans": [
+                  {
+                    "Node Type": "Nested Loop",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Join Type": "Inner",
+                    "Startup Cost": 0.86,
+                    "Total Cost": 5441.47,
+                    "Plan Rows": 121,
+                    "Plan Width": 31,
+                    "Inner Unique": true,
+                    "Plans": [
+                      {
+                        "Node Type": "Nested Loop",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Join Type": "Inner",
+                        "Startup Cost": 0.59,
+                        "Total Cost": 5406.33,
+                        "Plan Rows": 121,
+                        "Plan Width": 35,
+                        "Inner Unique": false,
+                        "Plans": [
+                          {
+                            "Node Type": "Nested Loop",
+                            "Parent Relationship": "Outer",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Join Type": "Inner",
+                            "Startup Cost": 0.29,
+                            "Total Cost": 2374.92,
+                            "Plan Rows": 2020,
+                            "Plan Width": 18,
+                            "Inner Unique": false,
+                            "Plans": [
+                              {
+                                "Node Type": "Seq Scan",
+                                "Parent Relationship": "Outer",
+                                "Parallel Aware": false,
+                                "Async Capable": false,
+                                "Relation Name": "part",
+                                "Alias": "part",
+                                "Startup Cost": 0.0,
+                                "Total Cost": 330.0,
+                                "Plan Rows": 505,
+                                "Plan Width": 4,
+                                "Filter": "((p_name)::text ~~ '%green%'::text)"
+                              },
+                              {
+                                "Node Type": "Index Scan",
+                                "Parent Relationship": "Inner",
+                                "Parallel Aware": false,
+                                "Async Capable": false,
+                                "Scan Direction": "Forward",
+                                "Index Name": "idx_partsupp_partkey",
+                                "Relation Name": "partsupp",
+                                "Alias": "partsupp",
+                                "Startup Cost": 0.29,
+                                "Total Cost": 4.01,
+                                "Plan Rows": 4,
+                                "Plan Width": 14,
+                                "Index Cond": "(ps_partkey = part.p_partkey)"
+                              }
+                            ]
+                          },
+                          {
+                            "Node Type": "Index Scan",
+                            "Parent Relationship": "Inner",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Scan Direction": "Forward",
+                            "Index Name": "idx_lineitem_partkey",
+                            "Relation Name": "lineitem",
+                            "Alias": "lineitem",
+                            "Startup Cost": 0.3,
+                            "Total Cost": 1.49,
+                            "Plan Rows": 1,
+                            "Plan Width": 29,
+                            "Index Cond": "(l_partkey = partsupp.ps_partkey)",
+                            "Filter": "(l_suppkey = partsupp.ps_suppkey)"
+                          }
+                        ]
+                      },
+                      {
+                        "Node Type": "Index Scan",
+                        "Parent Relationship": "Inner",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Scan Direction": "Forward",
+                        "Index Name": "supplier_pkey",
+                        "Relation Name": "supplier",
+                        "Alias": "supplier",
+                        "Startup Cost": 0.27,
+                        "Total Cost": 0.29,
+                        "Plan Rows": 1,
+                        "Plan Width": 8,
+                        "Index Cond": "(s_suppkey = lineitem.l_suppkey)"
+                      }
+                    ]
+                  },
+                  {
+                    "Node Type": "Index Scan",
+                    "Parent Relationship": "Inner",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Forward",
+                    "Index Name": "orders_pkey",
+                    "Relation Name": "orders",
+                    "Alias": "orders",
+                    "Startup Cost": 0.29,
+                    "Total Cost": 0.33,
+                    "Plan Rows": 1,
+                    "Plan Width": 8,
+                    "Index Cond": "(o_orderkey = lineitem.l_orderkey)"
+                  }
+                ]
+              },
+              {
+                "Node Type": "Materialize",
+                "Parent Relationship": "Inner",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 0.0,
+                "Total Cost": 1.38,
+                "Plan Rows": 25,
+                "Plan Width": 30,
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "nation",
+                    "Alias": "nation",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1.25,
+                    "Plan Rows": 25,
+                    "Plan Width": 30
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

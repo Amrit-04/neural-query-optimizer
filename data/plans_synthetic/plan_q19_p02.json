@@ -1,0 +1,46 @@
+{
+  "query_id": 19,
+  "hint_id": 2,
+  "tables": [
+    "orders",
+    "region"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 7860.58,
+    "Total Cost": 8322.97,
+    "Plan Rows": 1.0,
+    "Plan Width": 85,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.42,
+        "Total Cost": 7706.45,
+        "Plan Rows": 1.0,
+        "Plan Width": 85,
+        "Plans": [
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.42,
+            "Total Cost": 7593.75,
+            "Plan Rows": 21674.0,
+            "Plan Width": 51
+          },
+          {
+            "Node Type": "Index Only Scan",
+            "Relation Name": "region",
+            "Startup Cost": 0.42,
+            "Total Cost": 5.2,
+            "Plan Rows": 1.0,
+            "Plan Width": 34
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1997.74,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

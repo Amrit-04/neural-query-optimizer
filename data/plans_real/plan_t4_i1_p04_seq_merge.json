@@ -1,0 +1,132 @@
+{
+  "query_id": "t4_i1",
+  "template_id": 4,
+  "template_name": "Order Priority Checking",
+  "plan_id": 4,
+  "hint_name": "seq_merge",
+  "is_default_plan": false,
+  "execution_time": 76.502,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 4000.0,
+  "plan": {
+    "Node Type": "Aggregate",
+    "Strategy": "Sorted",
+    "Partial Mode": "Simple",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 17430.97,
+    "Total Cost": 17448.28,
+    "Plan Rows": 5,
+    "Plan Width": 24,
+    "Group Key": [
+      "orders.o_orderpriority"
+    ],
+    "Plans": [
+      {
+        "Node Type": "Sort",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 17430.97,
+        "Total Cost": 17436.72,
+        "Plan Rows": 2302,
+        "Plan Width": 16,
+        "Sort Key": [
+          "orders.o_orderpriority"
+        ],
+        "Plans": [
+          {
+            "Node Type": "Merge Join",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Join Type": "Inner",
+            "Startup Cost": 17003.23,
+            "Total Cost": 17302.42,
+            "Plan Rows": 2302,
+            "Plan Width": 16,
+            "Inner Unique": true,
+            "Merge Cond": "(orders.o_orderkey = lineitem.l_orderkey)",
+            "Plans": [
+              {
+                "Node Type": "Sort",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 2653.32,
+                "Total Cost": 2660.32,
+                "Plan Rows": 2800,
+                "Plan Width": 20,
+                "Sort Key": [
+                  "orders.o_orderkey"
+                ],
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "orders",
+                    "Alias": "orders",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 2493.0,
+                    "Plan Rows": 2800,
+                    "Plan Width": 20,
+                    "Filter": "((o_orderdate >= '1994-01-01'::date) AND (o_orderdate < '1994-04-01 00:00:00'::timestamp without time zone))"
+                  }
+                ]
+              },
+              {
+                "Node Type": "Sort",
+                "Parent Relationship": "Inner",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 14349.91,
+                "Total Cost": 14482.61,
+                "Plan Rows": 53079,
+                "Plan Width": 4,
+                "Sort Key": [
+                  "lineitem.l_orderkey"
+                ],
+                "Plans": [
+                  {
+                    "Node Type": "Aggregate",
+                    "Strategy": "Hashed",
+                    "Partial Mode": "Simple",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Startup Cost": 9653.52,
+                    "Total Cost": 10184.31,
+                    "Plan Rows": 53079,
+                    "Plan Width": 4,
+                    "Group Key": [
+                      "lineitem.l_orderkey"
+                    ],
+                    "Planned Partitions": 0,
+                    "Plans": [
+                      {
+                        "Node Type": "Seq Scan",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Relation Name": "lineitem",
+                        "Alias": "lineitem",
+                        "Startup Cost": 0.0,
+                        "Total Cost": 9403.67,
+                        "Plan Rows": 99938,
+                        "Plan Width": 4,
+                        "Filter": "(l_commitdate < l_receiptdate)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

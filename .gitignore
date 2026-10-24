@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+mlflow.db
+mlruns/
+*.sqlite
+.DS_Store
+Thumbs.db

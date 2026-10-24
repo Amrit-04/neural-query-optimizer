@@ -1,0 +1,46 @@
+{
+  "query_id": 19,
+  "hint_id": 3,
+  "tables": [
+    "orders",
+    "region"
+  ],
+  "plan": {
+    "Node Type": "Hash Aggregate",
+    "Startup Cost": 1066.08,
+    "Total Cost": 1167.61,
+    "Plan Rows": 1.0,
+    "Plan Width": 143,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 849.42,
+        "Total Cost": 1015.31,
+        "Plan Rows": 1.0,
+        "Plan Width": 143,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 0.0,
+            "Total Cost": 341.72,
+            "Plan Rows": 33172.0,
+            "Plan Width": 64
+          },
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "region",
+            "Startup Cost": 0.0,
+            "Total Cost": 10.05,
+            "Plan Rows": 5.0,
+            "Plan Width": 79
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 284.6,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

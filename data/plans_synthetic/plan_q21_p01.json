@@ -1,0 +1,37 @@
+{
+  "query_id": 21,
+  "hint_id": 1,
+  "tables": [
+    "lineitem",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 10849.14,
+    "Total Cost": 11097.24,
+    "Plan Rows": 1216.0,
+    "Plan Width": 176,
+    "Plans": [
+      {
+        "Node Type": "Index Only Scan",
+        "Relation Name": "lineitem",
+        "Startup Cost": 0.42,
+        "Total Cost": 9287.05,
+        "Plan Rows": 46410.0,
+        "Plan Width": 97
+      },
+      {
+        "Node Type": "Bitmap Heap Scan",
+        "Relation Name": "customer",
+        "Startup Cost": 4.5,
+        "Total Cost": 817.77,
+        "Plan Rows": 3211.0,
+        "Plan Width": 79
+      }
+    ]
+  },
+  "execution_time": 2770.17,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

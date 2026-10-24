@@ -1,0 +1,82 @@
+{
+  "query_id": 31,
+  "hint_id": 4,
+  "tables": [
+    "lineitem",
+    "orders",
+    "part",
+    "nation"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 42956.48,
+    "Total Cost": 45483.34,
+    "Plan Rows": 1.0,
+    "Plan Width": 190,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 42114.14,
+        "Total Cost": 42114.2,
+        "Plan Rows": 1.0,
+        "Plan Width": 190,
+        "Plans": [
+          {
+            "Node Type": "Nested Loop",
+            "Startup Cost": 0.42,
+            "Total Cost": 42104.42,
+            "Plan Rows": 7.0,
+            "Plan Width": 139,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "lineitem",
+                "Startup Cost": 0.42,
+                "Total Cost": 1530.53,
+                "Plan Rows": 4350.0,
+                "Plan Width": 82
+              },
+              {
+                "Node Type": "Merge Join",
+                "Startup Cost": 9201.51,
+                "Total Cost": 9327.33,
+                "Plan Rows": 183.0,
+                "Plan Width": 57,
+                "Plans": [
+                  {
+                    "Node Type": "Index Scan",
+                    "Relation Name": "orders",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 8574.02,
+                    "Plan Rows": 24474.0,
+                    "Plan Width": 30
+                  },
+                  {
+                    "Node Type": "Index Scan",
+                    "Relation Name": "part",
+                    "Startup Cost": 0.42,
+                    "Total Cost": 250.01,
+                    "Plan Rows": 691.0,
+                    "Plan Width": 27
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "nation",
+            "Startup Cost": 0.42,
+            "Total Cost": 9.56,
+            "Plan Rows": 4.0,
+            "Plan Width": 51
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 6000.0,
+  "timed_out": true,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

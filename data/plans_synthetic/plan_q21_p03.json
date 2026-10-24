@@ -1,0 +1,46 @@
+{
+  "query_id": 21,
+  "hint_id": 3,
+  "tables": [
+    "lineitem",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Hash Aggregate",
+    "Startup Cost": 84724.7,
+    "Total Cost": 92793.72,
+    "Plan Rows": 7572.0,
+    "Plan Width": 47,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 0.0,
+        "Total Cost": 80690.19,
+        "Plan Rows": 75719.0,
+        "Plan Width": 47,
+        "Plans": [
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "lineitem",
+            "Startup Cost": 0.0,
+            "Total Cost": 4257.22,
+            "Plan Rows": 424722.0,
+            "Plan Width": 26
+          },
+          {
+            "Node Type": "Seq Scan",
+            "Relation Name": "customer",
+            "Startup Cost": 0.0,
+            "Total Cost": 179.96,
+            "Plan Rows": 16996.0,
+            "Plan Width": 21
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 6000.0,
+  "timed_out": true,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

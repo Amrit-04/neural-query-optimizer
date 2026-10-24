@@ -1,0 +1,46 @@
+{
+  "query_id": 0,
+  "hint_id": 2,
+  "tables": [
+    "lineitem",
+    "supplier"
+  ],
+  "plan": {
+    "Node Type": "Sort",
+    "Startup Cost": 15290.0,
+    "Total Cost": 16189.42,
+    "Plan Rows": 123.0,
+    "Plan Width": 207,
+    "Plans": [
+      {
+        "Node Type": "Nested Loop",
+        "Startup Cost": 4.5,
+        "Total Cost": 14990.2,
+        "Plan Rows": 123.0,
+        "Plan Width": 207,
+        "Plans": [
+          {
+            "Node Type": "Bitmap Heap Scan",
+            "Relation Name": "lineitem",
+            "Startup Cost": 4.5,
+            "Total Cost": 10768.38,
+            "Plan Rows": 43014.0,
+            "Plan Width": 93
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "supplier",
+            "Startup Cost": 0.42,
+            "Total Cost": 98.15,
+            "Plan Rows": 258.0,
+            "Plan Width": 114
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 3872.13,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}

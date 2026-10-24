@@ -1,0 +1,91 @@
+{
+  "query_id": 5,
+  "hint_id": 1,
+  "tables": [
+    "orders",
+    "part",
+    "partsupp",
+    "region",
+    "customer"
+  ],
+  "plan": {
+    "Node Type": "Merge Join",
+    "Startup Cost": 6054.27,
+    "Total Cost": 6054.59,
+    "Plan Rows": 1.0,
+    "Plan Width": 370,
+    "Plans": [
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 4213.14,
+        "Total Cost": 4291.44,
+        "Plan Rows": 62.0,
+        "Plan Width": 171,
+        "Plans": [
+          {
+            "Node Type": "Bitmap Heap Scan",
+            "Relation Name": "orders",
+            "Startup Cost": 4.5,
+            "Total Cost": 3828.16,
+            "Plan Rows": 15253.0,
+            "Plan Width": 54
+          },
+          {
+            "Node Type": "Index Scan",
+            "Relation Name": "part",
+            "Startup Cost": 0.42,
+            "Total Cost": 150.1,
+            "Plan Rows": 406.0,
+            "Plan Width": 117
+          }
+        ]
+      },
+      {
+        "Node Type": "Merge Join",
+        "Startup Cost": 1726.11,
+        "Total Cost": 1761.89,
+        "Plan Rows": 1.0,
+        "Plan Width": 199,
+        "Plans": [
+          {
+            "Node Type": "Index Only Scan",
+            "Relation Name": "partsupp",
+            "Startup Cost": 0.42,
+            "Total Cost": 1436.0,
+            "Plan Rows": 7155.0,
+            "Plan Width": 108
+          },
+          {
+            "Node Type": "Merge Join",
+            "Startup Cost": 180.61,
+            "Total Cost": 182.77,
+            "Plan Rows": 1.0,
+            "Plan Width": 91,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Relation Name": "region",
+                "Startup Cost": 4.5,
+                "Total Cost": 15.28,
+                "Plan Rows": 1.0,
+                "Plan Width": 60
+              },
+              {
+                "Node Type": "Index Scan",
+                "Relation Name": "customer",
+                "Startup Cost": 0.42,
+                "Total Cost": 158.85,
+                "Plan Rows": 431.0,
+                "Plan Width": 31
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "execution_time": 1618.94,
+  "timed_out": false,
+  "measurements_median_of": 3,
+  "timeout_cap_ms": 6000.0
+}
